@@ -5,6 +5,6 @@
 	<title>Diplom</title>
 </head>
 <body>
-
+	<a href="create.php">Создать базу данных</a>
 </body>
 </html>
