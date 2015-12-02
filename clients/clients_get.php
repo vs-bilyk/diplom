@@ -44,5 +44,8 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 			<td><?php echo $row['FIO']; ?></td>
 		</tr>
 		<?php }  ?>
+		<tr>
+			<td colspan="11"><a href="clients_new.php">Добавить</a></td>
+		</tr>
 	</tbody>		
 </table>
