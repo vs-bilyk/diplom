@@ -1,0 +1,10 @@
+.table-add-row__company-var {
+	display:none;
+}
+.form-add {
+	position: absolute;
+	display:none;
+}
+.form-add_visibility {
+	display:block;
+}
