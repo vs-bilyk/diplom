@@ -44,7 +44,7 @@ $sql_banks = "CREATE TABLE `leasing`.`banks` (
 	PRIMARY KEY(`INN`))";
 
 $sql_order = "CREATE TABLE `leasing`.`order` (
-	`NZN` VARCHAR(9),
+	`NZN` INT(9) ZEROFILL AUTO_INCREMENT,
 	`DDATE` DATE,
 	`PINN` VARCHAR(10),
 	`NAME` VARCHAR(40),	
@@ -53,7 +53,7 @@ $sql_order = "CREATE TABLE `leasing`.`order` (
 	PRIMARY KEY(`NZN`))"; 
 
 $sql_crediting = "CREATE TABLE `leasing`.`crediting` (
-	`ND` VARCHAR(9),	
+	`ND` INT(9) ZEROFILL AUTO_INCREMENT,	
 	`DDATE` DATE,
 	`BINN` VARCHAR(10),
 	`SUMMA` DECIMAL(10, 2),
@@ -65,7 +65,7 @@ $sql_crediting = "CREATE TABLE `leasing`.`crediting` (
 	PRIMARY KEY(`ND`))";
 
 $sql_lease_agreement = "CREATE TABLE `leasing`.`lease_agreement` (
-	`NLD` VARCHAR(9),
+	`NLD` INT(9) ZEROFILL AUTO_INCREMENT,
 	`DDATE` DATE,
 	`KINN` VARCHAR(10),
 	`NZN` VARCHAR(9),
@@ -92,7 +92,7 @@ $sql_lease_agreement = "CREATE TABLE `leasing`.`lease_agreement` (
 	PRIMARY KEY(`NLD`))"; 
 
 $sql_purchase_sale = "CREATE TABLE `leasing`.`purchase_sale` (
-	`NDKP` VARCHAR(9),
+	`NDKP` INT(9) ZEROFILL AUTO_INCREMENT,
 	`DDATE`	DATE,
 	`PINN` VARCHAR(10),
 	`KINN` VARCHAR(10),
