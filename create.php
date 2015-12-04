@@ -122,5 +122,6 @@ if(!$result_db) {
 if(!$result_company || !$result_banks || !$result_order || !$result_crediting || !$result_lease_agreement || !$result_purchase_sale) {
 	echo 'Ошибка при создании таблиц!';
 }
+else echo '<script language="javascript">window.location.href="index.php?thnx=0";</script>';
 
 ?>

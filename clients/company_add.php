@@ -22,7 +22,7 @@ $result = mysql_query($str_sql, $link);
 if(!$result) {
 	echo "Возникла ошибка при добавлении данных"; 
 }
-else echo '<script language="javascript">window.location.href="'.$company.'_new.php?thnx=0";</script>'; // поменять перенаправление!!!
+else echo '<script language="javascript">window.location.href="'.$company.'_new.php?thnx=0";</script>'; // перенаправление на саму таблицу
 
 
 ?>
