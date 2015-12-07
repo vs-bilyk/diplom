@@ -5,27 +5,72 @@ require_once 'connect.php';
 $sql_db = "CREATE DATABASE leasing"; // запрос для создание базы данных
 $result_db = mysql_query($sql_db, $link);  // создание базы данных
 
-$name_table_array = array('clients', 'suppliers', 'leasing_company'); // массив с названием таблиц
-$length_array = count($name_table_array);
+// $name_table_array = array('clients', 'suppliers', 'leasing_company'); // массив с названием таблиц
+// $length_array = count($name_table_array);
 
-for ($i = 0; $i < $length_array; $i++) { // цикл для создания трех одинаковых по содержанию таблиц
+// for ($i = 0; $i < $length_array; $i++) { // цикл для создания трех одинаковых по содержанию таблиц
 
-	$sql_company = "CREATE TABLE `leasing`.`".$name_table_array[$i]."` ( 
-		`NAME` VARCHAR(40) NOT NULL,
-		`OGRN` VARCHAR(13) NOT NULL,
-		`ADDL` VARCHAR(40) NOT NULL,
-		`ADDM` VARCHAR(40) NOT NULL,
-		`INN` VARCHAR(10) NOT NULL,
-		`KPP` VARCHAR(9) NOT NULL,
-		`RS` VARCHAR(20) NOT NULL,
-		`BIK` VARCHAR(9) NOT NULL,
-		`TF` VARCHAR(10) NOT NULL,
-		`FX` VARCHAR(10) NOT NULL,
-		`FIO` VARCHAR(35) NOT NULL,
-		PRIMARY KEY(`INN`, `NAME`))";
+// 	$sql_company = "CREATE TABLE `leasing`.`".$name_table_array[$i]."` ( 
+// 		`NAME` VARCHAR(40) NOT NULL,
+// 		`OGRN` VARCHAR(13) NOT NULL,
+// 		`ADDL` VARCHAR(40) NOT NULL,
+// 		`ADDM` VARCHAR(40) NOT NULL,
+// 		`INN` VARCHAR(10) NOT NULL,
+// 		`KPP` VARCHAR(9) NOT NULL,
+// 		`RS` VARCHAR(20) NOT NULL,
+// 		`BIK` VARCHAR(9) NOT NULL,
+// 		`TF` VARCHAR(10) NOT NULL,
+// 		`FX` VARCHAR(10) NOT NULL,
+// 		`FIO` VARCHAR(35) NOT NULL,
+// 		PRIMARY KEY(`INN`, `NAME`))";
 	
-	$result_company = mysql_query($sql_company, $link);
-}
+// 	$result_company = mysql_query($sql_company, $link);
+
+// }
+$sql_clients = "CREATE TABLE `leasing`.`clients` ( 
+	`NAME` VARCHAR(40) NOT NULL,
+	`OGRN` VARCHAR(13) NOT NULL,
+	`ADDL` VARCHAR(40) NOT NULL,
+	`ADDM` VARCHAR(40) NOT NULL,
+	`INN` VARCHAR(10) NOT NULL,
+	`KPP` VARCHAR(9) NOT NULL,
+	`RS` VARCHAR(20) NOT NULL,
+	`BIK` VARCHAR(9) NOT NULL,
+	`TF` VARCHAR(10) NOT NULL,
+	`FX` VARCHAR(10) NOT NULL,
+	`FIO` VARCHAR(35) NOT NULL,
+	PRIMARY KEY(`INN`, `NAME`))";
+
+$sql_suppliers = "CREATE TABLE `leasing`.`suppliers` ( 
+	`NAME` VARCHAR(40) NOT NULL,
+	`OGRN` VARCHAR(13) NOT NULL,
+	`ADDL` VARCHAR(40) NOT NULL,
+	`ADDM` VARCHAR(40) NOT NULL,
+	`INN` VARCHAR(10) NOT NULL,
+	`KPP` VARCHAR(9) NOT NULL,
+	`RS` VARCHAR(20) NOT NULL,
+	`BIK` VARCHAR(9) NOT NULL,
+	`TF` VARCHAR(10) NOT NULL,
+	`FX` VARCHAR(10) NOT NULL,
+	`FIO` VARCHAR(35) NOT NULL,
+	PRIMARY KEY(`INN`, `NAME`))
+	-- FOREIGN KEY (`INN`) REFERENCES `order`(`PINN`)
+	-- ON UPDATE CASCADE
+	-- ON DELETE RESTRICT)";
+
+$sql_leasing_company = "CREATE TABLE `leasing`.`leasing_company` ( 
+	`NAME` VARCHAR(40) NOT NULL,
+	`OGRN` VARCHAR(13) NOT NULL,
+	`ADDL` VARCHAR(40) NOT NULL,
+	`ADDM` VARCHAR(40) NOT NULL,
+	`INN` VARCHAR(10) NOT NULL,
+	`KPP` VARCHAR(9) NOT NULL,
+	`RS` VARCHAR(20) NOT NULL,
+	`BIK` VARCHAR(9) NOT NULL,
+	`TF` VARCHAR(10) NOT NULL,
+	`FX` VARCHAR(10) NOT NULL,
+	`FIO` VARCHAR(35) NOT NULL,
+	PRIMARY KEY(`INN`, `NAME`))";
 
 $sql_banks = "CREATE TABLE `leasing`.`banks` (
 	`NAME` VARCHAR(40) NOT NULL,
@@ -109,6 +154,9 @@ $sql_purchase_sale = "CREATE TABLE `leasing`.`purchase_sale` (
 	`PNO` INT,
 	PRIMARY KEY(`NDKP`))"; 
 
+$result_clients = mysql_query($sql_clients, $link);
+$result_suppliers = mysql_query($sql_suppliers, $link);
+$result_leasing_company = mysql_query($sql_leasing_company, $link);
 $result_banks = mysql_query($sql_banks, $link);
 $result_order = mysql_query($sql_order, $link);
 $result_crediting = mysql_query($sql_crediting, $link);
@@ -117,9 +165,10 @@ $result_purchase_sale = mysql_query($sql_purchase_sale, $link);
 
 if(!$result_db) {
 	echo 'Ошибка при создании базы данных! <br>';
+	exit();
 }
 
-if(!$result_company || !$result_banks || !$result_order || !$result_crediting || !$result_lease_agreement || !$result_purchase_sale) {
+if(!$result_clients || !$result_suppliers || !$result_leasing_company || !$result_banks || !$result_order || !$result_crediting || !$result_lease_agreement || !$result_purchase_sale) {
 	echo 'Ошибка при создании таблиц!';
 }
 else echo '<script language="javascript">window.location.href="index.php?thnx=0";</script>';
