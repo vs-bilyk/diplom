@@ -34,12 +34,12 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 		<?php
 			while ($row = mysql_fetch_array($result)) {  // вывод результата запроса
 		?>
-		<tr>
+		<tr  id='inn_<?php echo $row['INN']; ?>' onclick="transferDataPhp(this.id);">
 			<td><?php echo $row['NAME']; ?></td>
 			<td><?php echo $row['OGRN']; ?></td>
 			<td><?php echo $row['ADDL']; ?></td>
 			<td><?php echo $row['ADDM']; ?></td>
-			<td onclick="transferDataPhp(this.innerHTML);"><?php echo $row['INN']; ?></td>
+			<td><?php echo $row['INN']; ?></td>
 			<td><?php echo $row['KPP']; ?></td>
 			<td><?php echo $row['RS']; ?></td>
 			<td><?php echo $row['BIK']; ?></td>
@@ -54,9 +54,9 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 	</tbody>		
 </table>
 
+<div class="span-add-form-edit"></div>
+
 <?php  
 include "clients_new.php";
-// include "clients_edit.php";
-
 ?>
 

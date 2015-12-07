@@ -1,24 +1,21 @@
 function formAddClassVisibility() {
-	$('.form-add').addClass('form-add_visibility');
+	$('.form-add').addClass('form_visibility');
 }
-function formAddClassHidden() {
-	$('.form-add').removeClass('form-add_visibility');
+function formAddClassHidden(obj) {
+	$(obj).parent().removeClass('form_visibility');
 }
-function transferDataPhp(inn) {
-// 		var message = encodeURIComponent(inn);
-// window.location.href = 'clients_edit.php?message='+message;
+function transferDataPhp(primaryKey) {
+	arr = primaryKey.split('_');
+	type = arr[0]; // где искать
+	primaryKey = arr[1]; // первичный ключ строки
 
-var message = 'Hello, server!';
-$.get('clients_edit.php', {message:message}, function(data)	{
-	alert('Сервер ответил: '+data);
-});
-	// var message = inn;
-	// $.get('clients_get.php', {message:message}, function(data)	{
-	// 	$('span').html('<?php  include "clients_edit.php"; ?>')
-	// 	alert('Сервер ответил: '+data);
-	// });
+	$('.span-add-form-edit').html('<?php  include "clients_edit.php"; ?>')
 
+	$.post('clients_edit.php',{primaryKey:primaryKey},function(result){
+	$('.span-add-form-edit').append(result);
+	})
 
+	$('.form-edit').addClass('form_visibility');
 }
 
 

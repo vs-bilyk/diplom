@@ -1,6 +1,6 @@
-<form class="form-add" action="company_add.php" method="post">
+<form class="form-add form_hidden" action="../company/company_add.php" method="post">
 <h2>Добавление</h2>
-<input type="text" class="table-add-row__company-var" required name="company" value="clients">
+<input type="text" class="table-add-row__company-var" name="company" value="clients">
 	<table class="table-add-row">
 		<tbody class="table-add-row__tbody">
 			<tr>
@@ -52,5 +52,5 @@
 			</tr>
 		</tbody>
 	</table>
-	<button onclick="formAddClassHidden();">Закрыть</button>
+	<button onclick="formAddClassHidden(this);">Закрыть</button>
 </form>
