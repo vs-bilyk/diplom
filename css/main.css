@@ -1,7 +1,79 @@
-.table-add-row__company-var {
-	display:none;
+body {
+	padding: 0;
+	margin: 0;
 }
-.form_hidden{
+.navigation{
+	padding-top: 15px;
+	height: 27px;
+	background-color: #0096A6;
+	text-align: center;
+}
+.navigation__item{
+	background-color: #5E5E5E;
+	border-top-left-radius: 5px;
+	padding: 10px 20px;
+	color:white;
+	text-decoration: none;
+	font-weight: bold;
+}
+.navigation__item[href="#"]{
+	background-color: #E8F5FF;
+	color: black;
+}
+form{
+	position: absolute;
+	width: 400px;
+	height: auto;
+	top:50px;
+	left: calc((100% - 440px) /2);
+	padding: 0 0 30px 40px;
+	background-color: white;
+	border: 1px solid rgba(200, 201, 201, 1);
+	border-radius: 2px;
+}
+table{
+	border-collapse: collapse;
+}
+tr:nth-child(odd){
+	background-color: #E8F5FF;
+}
+.table-show-db tr{
+	border-bottom: 1px solid #DEDEDE;
+}
+.table-show-db td{
+	padding: 5px;
+}
+th{
+	padding: 15px 5px;
+	border-bottom: 1px solid #BFBFBF;
+}
+input[disabled]{
+	background-color: white;
+}
+.form_header{
+	width: center;
+	text-align: center;
+}
+.form__table{
+	position: relative;
+}
+.form__corner-button{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top:0px;
+	right: 0px;
+}
+.form__td-button label {
+	display: inline-block;
+	width: 100%;
+}
+.form__td-button, .table__td-button{
+	text-align: center;
+	background-color: #8CCCD4;
+	padding: 5px 0;
+}
+.form_hidden, .form__company-var, .form__input-submit {
 	display:none;
 }
 .form_visibility {

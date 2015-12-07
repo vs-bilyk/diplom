@@ -10,5 +10,7 @@
 <body>
 	<a href="create.php">Создать базу данных</a>
 	<a href="clients/clients_get.php">Клиенты</a>
+	<a href="suppliers/suppliers_get.php">Поставщики</a>
+	<a href="banks/banks_get.php">Банки</a>
 </body>
 </html>

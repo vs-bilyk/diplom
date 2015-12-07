@@ -1,6 +1,6 @@
 <form class="form-add form_hidden" action="../company/company_add.php" method="post">
 <header class="form_header"><h2>Добавление</h2></header>
-<input type="text" class="form__company-var" name="company" value="clients">
+<input type="text" class="form__company-var" name="company" value="suppliers">
 	<table class="form__table">
 		<tbody class="form__tbody">
 			<tr>
