@@ -1,16 +1,6 @@
-<?php
-
-include "../connect.php"
-
-?>
-<style>
-.table-add-row__company-var {
-	display:none;
-}
-</style>
-
-<form action="company_add.php" method="post">
-<input type="text" class="table-add-row__company-var" required name="company" value="clients">
+<form class="form-add form_hidden" action="../company/company_add.php" method="post">
+<h2>Добавление</h2>
+<input type="text" class="table-add-row__company-var" name="company" value="clients">
 	<table class="table-add-row">
 		<tbody class="table-add-row__tbody">
 			<tr>
@@ -62,4 +52,5 @@ include "../connect.php"
 			</tr>
 		</tbody>
 	</table>
+	<button onclick="formAddClassHidden(this);">Закрыть</button>
 </form>

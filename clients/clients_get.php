@@ -1,3 +1,7 @@
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+
 <?php
 
 include "../connect.php";
@@ -30,7 +34,7 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 		<?php
 			while ($row = mysql_fetch_array($result)) {  // вывод результата запроса
 		?>
-		<tr>
+		<tr  id='inn_<?php echo $row['INN']; ?>' onclick="transferDataPhp(this.id);">
 			<td><?php echo $row['NAME']; ?></td>
 			<td><?php echo $row['OGRN']; ?></td>
 			<td><?php echo $row['ADDL']; ?></td>
@@ -45,7 +49,14 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 		</tr>
 		<?php }  ?>
 		<tr>
-			<td colspan="11"><a href="clients_new.php">Добавить</a></td>
+			<td colspan="11" onclick="formAddClassVisibility();">Добавить</td>
 		</tr>
 	</tbody>		
 </table>
+
+<div class="span-add-form-edit"></div>
+
+<?php  
+include "clients_new.php";
+?>
+
