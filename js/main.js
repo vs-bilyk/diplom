@@ -5,10 +5,21 @@ function formAddClassHidden(obj) {
 	$(obj).parent().addClass('form_hidden');
 	$(obj).parent().removeClass('form_visibility');
 }
-function transferDataPhp(primaryKey) {
-	var arr = primaryKey.split('_');
+function formAddContract(addr) {
+
+	var text = '<?php  include "'+addr+'"; ?>'
+	$('.span-add-form-add').html(text);
+
+	$.post(addr,{},function(result){
+	$('.span-add-form-add').append(result);
+	$('.form-add').addClass('form_visibility');
+	})
+
+}
+function transferDataPhp(key) {
+	var arr = key.split('_');
 	var type = arr[0]; // где искать
-	var primaryKey = arr[1]; // первичный ключ строки
+	var key = arr[1]; // первичный ключ строки
 	var addr;
 
 	switch(type) {
@@ -24,16 +35,22 @@ function transferDataPhp(primaryKey) {
 		case 'banks':  
 		addr = 'banks_edit.php';
 		break;
+
+		case 'order':  
+		addr = 'order_edit.php';
+		break;
 	}
 
 	var text = '<?php  include "'+addr+'"; ?>'
 	$('.span-add-form-edit').html(text);
 
-	$.post(addr,{primaryKey:primaryKey},function(result){
+	$.post(addr,{key:key},function(result){
 	$('.span-add-form-edit').append(result);
+	$('.form-edit').addClass('form_visibility'); 
 	})
-
-	$('.form-edit').addClass('form_visibility');
+}
+function printDoc() {
+	window.print();
 }
 
 

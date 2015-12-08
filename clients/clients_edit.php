@@ -3,7 +3,7 @@
 
 include "../connect.php";
 
-$inn = $_POST['primaryKey'];
+$inn = $_POST['key'];
 
 $sql="
 SELECT * FROM leasing.clients WHERE INN='".$inn."'; 

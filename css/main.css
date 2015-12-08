@@ -1,3 +1,6 @@
+* {
+	font-family: Arial, sans-serif;
+}
 body {
 	padding: 0;
 	margin: 0;
@@ -34,6 +37,9 @@ form{
 table{
 	border-collapse: collapse;
 }
+.table-show-db{
+	width: 100%;
+}
 tr:nth-child(odd){
 	background-color: #E8F5FF;
 }
@@ -49,6 +55,9 @@ th{
 }
 input[disabled]{
 	background-color: white;
+}
+select{
+	width: 100%;
 }
 .form_header{
 	width: center;
@@ -72,6 +81,9 @@ input[disabled]{
 	text-align: center;
 	background-color: #8CCCD4;
 	padding: 5px 0;
+}
+.table__td-button_border{
+	border-right: 1px solid #DEDEDE;
 }
 .form_hidden, .form__company-var, .form__input-submit {
 	display:none;

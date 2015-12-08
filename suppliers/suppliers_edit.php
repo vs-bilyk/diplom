@@ -3,7 +3,7 @@
 
 include "../connect.php";
 
-$inn = $_POST['primaryKey'];
+$inn = $_POST['key'];
 
 $sql="
 SELECT * FROM leasing.suppliers WHERE INN='".$inn."'; 
@@ -16,7 +16,7 @@ $row = mysql_fetch_array($result);
 
 <form class="form-edit" action="../company/company_save.php" method="post">
 <header class="form_header"><h2>Изменить запись</h2></header>
-<input type="text" class="form__company-var" name="company" value="banks">
+<input type="text" class="form__company-var" name="company" value="suppliers">
 <input type="text" class="form__company-var" name="company_inn" value="<?php echo $inn; ?>">
 	<table class="form__table">
 		<tbody class="form__tbody">
