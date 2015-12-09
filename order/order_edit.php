@@ -28,8 +28,16 @@ if(!$result_clients = mysql_query($sql_clients, $link)) { // выполнени�
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
 
-<form class="form-edit" action="order_save.php" method="post">
+
+<form class="form-edit" action="order_save.php"  method="post">
 <header class="form_header"><h2>Изменить запись</h2></header>
 <input type="text" class="form__company-var" name="number" value="<?php echo $nzn; ?>">
 	<table class="form__table">
@@ -79,7 +87,7 @@ if(!$result_clients = mysql_query($sql_clients, $link)) { // выполнени�
 				</td>
 			</tr>
 			<tr>
-				<td class="table__td-button table__td-button_border" onclick="printDoc();"><div>Печать</div></td>
+				<td id="order_doc.php" class="table__td-button table__td-button_border" onclick="viewDoc(this.id);">Документ</td>
 				<td class="form__td-button"><label>Изменить<input type="submit"  class="form__input-submit"></label></td>
 			</tr>
 		</tbody>
@@ -88,3 +96,6 @@ if(!$result_clients = mysql_query($sql_clients, $link)) { // выполнени�
 </form>
 
 
+	
+</body>
+</html>

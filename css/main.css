@@ -18,6 +18,7 @@ body {
 	color:white;
 	text-decoration: none;
 	font-weight: bold;
+	cursor: pointer;
 }
 .navigation__item[href="#"]{
 	background-color: #E8F5FF;
@@ -48,6 +49,7 @@ tr:nth-child(odd){
 }
 .table-show-db td{
 	padding: 5px;
+	cursor: pointer;
 }
 th{
 	padding: 15px 5px;
@@ -72,15 +74,18 @@ select{
 	position: absolute;
 	top:0px;
 	right: 0px;
+	cursor: pointer;
 }
 .form__td-button label {
 	display: inline-block;
 	width: 100%;
+	cursor: pointer;
 }
 .form__td-button, .table__td-button{
 	text-align: center;
 	background-color: #8CCCD4;
 	padding: 5px 0;
+	cursor: pointer;
 }
 .table__td-button_border{
 	border-right: 1px solid #DEDEDE;
@@ -90,4 +95,37 @@ select{
 }
 .form_visibility {
 	display:block;
+}
+.print-doc{
+	width:210mm;
+	/*height: 270mm;*/
+	margin-right: auto;
+	margin-left: auto;
+}
+.header-doc{
+	text-align: center;
+}
+.date-doc{
+	text-align: right;
+}
+.paragraph-doc{
+	text-align:justify;
+}
+.nav-doc{
+	width: 200px;
+	text-align: center;
+	margin: 50px auto 10px auto;
+	border: 1px solid #BFBFBF;
+}
+.button_link-doc, .button_print-doc{
+	display: inline-block;
+	padding: 5px 20px;
+	cursor: pointer;
+}
+.button_link-doc{
+	text-decoration: none;
+	color: black;
+}
+.button_print-doc {
+	border-right: 1px solid #BFBFBF;
 }
