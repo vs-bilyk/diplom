@@ -26,11 +26,11 @@ body {
 }
 form{
 	position: absolute;
-	width: 400px;
+	min-width: 550px;
 	height: auto;
-	top:50px;
-	left: calc((100% - 440px) /2);
-	padding: 0 0 30px 40px;
+	top:40px;
+	left: calc((100% - 610px) /2);
+	padding: 0 30px 30px 30px;
 	background-color: white;
 	border: 1px solid rgba(200, 201, 201, 1);
 	border-radius: 2px;
@@ -58,7 +58,7 @@ th{
 input[disabled]{
 	background-color: white;
 }
-input[type='date']{
+input{
 	width: 100%;
 }
 select{
@@ -70,6 +70,8 @@ select{
 }
 .form__table{
 	position: relative;
+	margin-left: auto;
+	margin-right: auto;
 }
 .form__corner-button{
 	width: 20px;

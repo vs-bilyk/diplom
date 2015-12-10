@@ -36,6 +36,15 @@ function transferDataPhp(key) {
 
 		case 'order': addr = 'order_edit.php';
 		break;
+
+		case 'lease': addr = 'lease_agreement_edit.php';
+		break;
+
+		case 'crediting': addr = 'crediting_edit.php';
+		break;
+
+		case 'purchase': addr = 'purchase_sale_edit.php';
+		break;
 	}
 	var text = '<?php  include "'+addr+'"; ?>'
 	$('.span-add-form-edit').html(text);

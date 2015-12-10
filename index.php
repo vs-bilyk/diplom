@@ -13,5 +13,6 @@
 	<a href="suppliers/suppliers_get.php">Поставщики</a>
 	<a href="banks/banks_get.php">Банки</a>
 	<a href="order/order_get.php">Заказ-наряд</a>
+	<a href="lease_agreement/lease_agreement_get.php">Договор лизинга</a>
 </body>
 </html>
