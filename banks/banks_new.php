@@ -8,7 +8,7 @@
 			</tr>
 			<tr>
 				<td><label for="ogrn">ОГРН</label></td>
-				<td><input type="text" required id="ogrn" name="OGRN" value=""></td>
+				<td><input type="number" required id="ogrn" name="OGRN" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="addl">Юридический адрес</label></td>
@@ -20,35 +20,35 @@
 			</tr>
 			<tr>
 				<td><label for="inn">ИНН</label></td>
-				<td><input type="text" required id="inn" name="INN" value=""></td>
+				<td><input type="number" required id="inn" name="INN" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="kpp">КПП</label></td>
-				<td><input type="text" required id="kpp" name="KPP" value=""></td>
+				<td><input type="number" required id="kpp" name="KPP" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="bik">БИК банка</label></td>
-				<td><input type="text" required id="bik" name="BIK" value=""></td>
+				<td><input type="number" required id="bik" name="BIK" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="rs">Расчетный счет</label></td>
-				<td><input type="text" required id="rs" name="RS" value=""></td>
+				<td><input type="number" required id="rs" name="RS" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="ks">Корреспондентский счет</label></td>
-				<td><input type="text" required id="ks" name="KS" value=""></td>
+				<td><input type="number" required id="ks" name="KS" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="ss">Ссудный счет</label></td>
-				<td><input type="text" required id="ss" name="SS" value=""></td>
+				<td><input type="number" required id="ss" name="SS" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="tf">Телефон</label></td>
-				<td><input type="text" required id="tf" name="TF" value=""></td>
+				<td><input type="text" placeholder="(###)-###-##-##" required id="tf" name="TF" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="fx">Факс</label></td>
-				<td><input type="text" required id="fx" name="FX" value=""></td>
+				<td><input type="text" placeholder="(###)-###-##-##" required id="fx" name="FX" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="fio">Руководитель организации</label></td>

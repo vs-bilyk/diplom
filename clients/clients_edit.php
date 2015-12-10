@@ -5,12 +5,35 @@ include "../connect.php";
 
 $inn = $_POST['key'];
 
-$sql="
-SELECT * FROM leasing.clients WHERE INN='".$inn."'; 
-";
+$sql = "SELECT clients.NAME,
+clients.OGRN,
+clients.ADDL,
+clients.ADDM,
+clients.INN,
+clients.KPP,
+clients.RS,
+clients.BINN,
+clients.TF,
+clients.FX,
+clients.FIO,
+banks.INN,
+banks.NAME AS banks_name
+FROM leasing.clients, leasing.banks
+WHERE clients.BINN=banks.INN AND clients.INN='".$inn."';";  //строка запроса для вывода данных
 
-$result = mysql_query($sql, $link); //Отправляем запрос
+if(!$result = mysql_query($sql, $link)) { // выполнение запроса
+	echo "Не удалось выполнить запрос!";
+	exit();
+}
+
 $row = mysql_fetch_array($result);
+
+$sql_banks = "SELECT NAME AS banks_name, INN AS BINN FROM leasing.banks";
+
+if(!$result_banks = mysql_query($sql_banks, $link)) { // выполнение запроса
+	echo "Не удалось выполнить запрос!";
+	exit();
+}
 
 ?>
 
@@ -26,7 +49,7 @@ $row = mysql_fetch_array($result);
 			</tr>
 			<tr>
 				<td><label for="ogrn">ОГРН</label></td>
-				<td><input type="text" required id="ogrn" name="OGRN" value="<?php echo $row['OGRN']; ?>"></td>
+				<td><input type="number" required id="ogrn" name="OGRN" value="<?php echo $row['OGRN']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="addl">Юридический адрес</label></td>
@@ -38,19 +61,29 @@ $row = mysql_fetch_array($result);
 			</tr>
 			<tr>
 				<td><label for="inn">ИНН</label></td>
-				<td><input type="text" disabled id="inn" name="INN" value="<?php echo $row['INN']; ?>"></td>
+				<td><input type="number" disabled id="inn" name="INN" value="<?php echo $row['INN']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="kpp">КПП</label></td>
-				<td><input type="text" required id="kpp" name="KPP" value="<?php echo $row['KPP']; ?>"></td>
+				<td><input type="number" required id="kpp" name="KPP" value="<?php echo $row['KPP']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="rs">Расчетный счет</label></td>
-				<td><input type="text" required id="rs" name="RS" value="<?php echo $row['RS']; ?>"></td>
+				<td><input type="number" required id="rs" name="RS" value="<?php echo $row['RS']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="bik">БИК банка</label></td>
-				<td><input type="text" required id="bik" name="BIK" value="<?php echo $row['BIK']; ?>"></td>
+				<td><label for="binn">Название банка</label></td>
+				<td>
+					<select size="1" required id="binn" name="BINN" value="">
+						<option selected value="<?php echo $row['BINN']; ?>"><?php echo $row['banks_name']; ?></option>
+						<?php
+							while ($row_banks = mysql_fetch_array($result_banks)) {  // вывод результата запроса
+								if ($row['banks_name'] !== $row_banks['banks_name']) { // проверка, чтобы второй раз не вывел пункт по умолчанию
+						?>
+						<option value="<?php echo $row_banks['BINN']; ?>"><?php echo $row_banks['banks_name']; ?></option>
+						<?php }} ?>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="tf">Телефон</label></td>

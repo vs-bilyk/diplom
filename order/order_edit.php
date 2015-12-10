@@ -5,7 +5,16 @@ include "../connect.php";
 
 $nzn = $_POST['key'];
 
-$sql = "SELECT order.NZN, order.DDATE, order.PINN, order.NAME, order.PRICE, order.KINN, suppliers.NAME AS supp_name, clients.NAME AS cl_name FROM leasing.order, leasing.suppliers, leasing.clients WHERE order.PINN=suppliers.INN AND order.KINN=clients.INN AND order.NZN='".$nzn."';";
+$sql = "SELECT order.NZN, 
+order.DDATE, 
+order.PINN, 
+order.NAME, 
+order.PRICE, 
+order.KINN, 
+suppliers.NAME AS supp_name, 
+clients.NAME AS cl_name 
+FROM leasing.order, leasing.suppliers, leasing.clients 
+WHERE order.PINN=suppliers.INN AND order.KINN=clients.INN AND order.NZN='".$nzn."';";
 
 if(!$result = mysql_query($sql, $link)) { // выполнение запроса
 	echo "Не удалось выполнить запрос!";
@@ -47,8 +56,8 @@ if(!$result_clients = mysql_query($sql_clients, $link)) { // выполнени�
 				<td><input type="text" disabled id="nzn" name="NZN" value="<?php echo $row['NZN']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="data">Дата</label></td>
-				<td><input type="text" required id="data" name="DDATE" value="<?php echo $row['DDATE']; ?>"></td>
+				<td><label for="ddate">Дата</label></td>
+				<td><input type="date" required id="ddate" name="DDATE" value="<?php echo $row['DDATE']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="pinn">Поставщик</label></td>
@@ -70,7 +79,7 @@ if(!$result_clients = mysql_query($sql_clients, $link)) { // выполнени�
 			</tr>
 			<tr>
 				<td><label for="price">Цена имущества</label></td>
-				<td><input type="text" required id="price" name="PRICE" value="<?php echo $row['PRICE']; ?>"></td>
+				<td><input type="number" required id="price" name="PRICE" value="<?php echo $row['PRICE']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="kinn">Лизингополучатель</label></td>

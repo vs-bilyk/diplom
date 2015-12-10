@@ -6,7 +6,21 @@
 
 include "../connect.php";
 
-$str_sql_query = "SELECT * FROM leasing.clients";  //строка запроса для вывода данных
+$str_sql_query = "SELECT clients.NAME,
+clients.OGRN,
+clients.ADDL,
+clients.ADDM,
+clients.INN,
+clients.KPP,
+clients.RS,
+clients.BINN,
+clients.TF,
+clients.FX,
+clients.FIO,
+banks.INN AS BINN,
+banks.NAME AS banks_name
+FROM leasing.clients, leasing.banks
+WHERE clients.BINN=banks.INN";  //строка запроса для вывода данных
 
 if(!$result = mysql_query($str_sql_query, $link)) { // выполнение запроса
 	echo "Не удалось выполнить запрос!";
@@ -33,7 +47,7 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 				<th>ИНН</th>
 				<th>КПП</th>
 				<th>Расчетный счет</th>
-				<th>БИК банка</th>
+				<th>Название банка</th>
 				<th>Телефон</th>
 				<th>Факс</th>
 				<th>ФИО руководителя</th>
@@ -51,7 +65,7 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 				<td><?php echo $row['INN']; ?></td>
 				<td><?php echo $row['KPP']; ?></td>
 				<td><?php echo $row['RS']; ?></td>
-				<td><?php echo $row['BIK']; ?></td>
+				<td><?php echo $row['banks_name']; ?></td>
 				<td><?php echo $row['TF']; ?></td>
 				<td><?php echo $row['FX']; ?></td>
 				<td><?php echo $row['FIO']; ?></td>

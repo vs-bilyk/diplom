@@ -58,6 +58,9 @@ th{
 input[disabled]{
 	background-color: white;
 }
+input[type='date']{
+	width: 100%;
+}
 select{
 	width: 100%;
 }

@@ -10,12 +10,12 @@ $addl = $_POST['ADDL'];
 $addm = $_POST['ADDM'];
 $kpp = $_POST['KPP'];
 $rs = $_POST['RS'];
-$bik = $_POST['BIK'];
+$binn = $_POST['BINN'];
 $tf = $_POST['TF'];
 $fx = $_POST['FX'];
 $fio = $_POST['FIO'];
 
-$sql = "UPDATE `leasing`.`".$company."` SET `NAME`='".$name."', `OGRN`='".$ogrn."', `ADDL`='".$addl."', `ADDM`='".$addm."', `KPP`='".$kpp."',  `RS`='".$rs."', `BIK`='".$bik."', `TF`='".$tf."', `FX`='".$fx."', `FIO`='".$fio."' WHERE `INN`='".$inn."';";
+$sql = "UPDATE `leasing`.`".$company."` SET `NAME`='".$name."', `OGRN`='".$ogrn."', `ADDL`='".$addl."', `ADDM`='".$addm."', `KPP`='".$kpp."',  `RS`='".$rs."', `BINN`='".$binn."', `TF`='".$tf."', `FX`='".$fx."', `FIO`='".$fio."' WHERE `INN`='".$inn."';";
 
 $result = mysql_query($sql, $link); //Отправляем запрос
 

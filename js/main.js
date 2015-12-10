@@ -95,6 +95,8 @@ function formatDate(year, month, day) {
 }
 
 function printDoc() {
+
+	$('.nav-doc').hide().show('2000') ;
 	$(document).ready(function(){
 		window.print();
 	})

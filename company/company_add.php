@@ -10,12 +10,12 @@ $addm = $_POST['ADDM'];
 $inn = $_POST['INN'];
 $kpp = $_POST['KPP'];
 $rs = $_POST['RS'];
-$bik = $_POST['BIK'];
+$binn = $_POST['BINN'];
 $tf = $_POST['TF'];
 $fx = $_POST['FX'];
 $fio = $_POST['FIO'];
 
-$str_sql = 'INSERT INTO `leasing`.`'.$company.'` (`NAME`, `OGRN`, `ADDL`, `ADDM`, `INN`, `KPP`, `RS`, `BIK`, `TF`, `FX`, `FIO`) VALUES ("'.$name.'", "'.$ogrn.'", "'.$addl.'", "'.$addm.'", "'.$inn.'", "'.$kpp.'", "'.$rs.'", "'.$bik.'", "'.$tf.'", "'.$fx.'", "'.$fio.'");';
+$str_sql = 'INSERT INTO `leasing`.`'.$company.'` (`NAME`, `OGRN`, `ADDL`, `ADDM`, `INN`, `KPP`, `RS`, `BINN`, `TF`, `FX`, `FIO`) VALUES ("'.$name.'", "'.$ogrn.'", "'.$addl.'", "'.$addm.'", "'.$inn.'", "'.$kpp.'", "'.$rs.'", "'.$binn.'", "'.$tf.'", "'.$fx.'", "'.$fio.'");';
 
 $result = mysql_query($str_sql, $link);
 

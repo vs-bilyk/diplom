@@ -23,7 +23,7 @@ if(!$result_clients = mysql_query($sql_clients, $link)) { // выполнени�
 		<tbody class="form__tbody">
 			<tr>
 				<td><label for="ddate">Дата</label></td>
-				<td><input type="text" placeholder="гг-мм-дд" required id="ddate" name="DDATE" value=""></td>
+				<td><input type="date" placeholder="гг-мм-дд" required id="ddate" name="DDATE" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="pinn">Поставщик</label></td>
@@ -43,7 +43,7 @@ if(!$result_clients = mysql_query($sql_clients, $link)) { // выполнени�
 			</tr>
 			<tr>
 				<td><label for="price">Цена имущества</label></td>
-				<td><input type="text" required id="price" name="PRICE" value=""></td>
+				<td><input type="number" required id="price" name="PRICE" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="kinn">Лизингополучатель</label></td>

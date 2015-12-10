@@ -25,7 +25,7 @@ $row = mysql_fetch_array($result);
 			</tr>
 			<tr>
 				<td><label for="ogrn">ОГРН</label></td>
-				<td><input type="text" required id="ogrn" name="OGRN" value="<?php echo $row['OGRN']; ?>"></td>
+				<td><input type="number" required id="ogrn" name="OGRN" value="<?php echo $row['OGRN']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="addl">Юридический адрес</label></td>
@@ -37,27 +37,27 @@ $row = mysql_fetch_array($result);
 			</tr>
 			<tr>
 				<td><label for="inn">ИНН</label></td>
-				<td><input type="text" disabled id="inn" name="INN" value="<?php echo $row['INN']; ?>"></td>
+				<td><input type="number" disabled id="inn" name="INN" value="<?php echo $row['INN']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="kpp">КПП</label></td>
-				<td><input type="text" required id="kpp" name="KPP" value="<?php echo $row['KPP']; ?>"></td>
+				<td><input type="number" required id="kpp" name="KPP" value="<?php echo $row['KPP']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="bik">БИК банка</label></td>
-				<td><input type="text" required id="bik" name="BIK" value="<?php echo $row['BIK']; ?>"></td>
+				<td><input type="number" required id="bik" name="BIK" value="<?php echo $row['BIK']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="rs">Расчетный счет</label></td>
-				<td><input type="text" required id="rs" name="RS" value="<?php echo $row['RS']; ?>"></td>
+				<td><input type="number" required id="rs" name="RS" value="<?php echo $row['RS']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="rs">Корреспондентский счет</label></td>
-				<td><input type="text" required id="ks" name="KS" value="<?php echo $row['KS']; ?>"></td>
+				<td><input type="number" required id="ks" name="KS" value="<?php echo $row['KS']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="rs">Ссудный счет</label></td>
-				<td><input type="text" required id="ss" name="SS" value="<?php echo $row['SS']; ?>"></td>
+				<td><input type="number" required id="ss" name="SS" value="<?php echo $row['SS']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="tf">Телефон</label></td>

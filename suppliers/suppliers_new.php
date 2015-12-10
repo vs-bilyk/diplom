@@ -1,3 +1,16 @@
+<?php 
+
+include "../connect.php";
+
+$sql_banks = "SELECT NAME AS banks_name, INN AS BINN FROM leasing.banks";
+
+if(!$result_banks = mysql_query($sql_banks, $link)) { // выполнение запроса
+	echo "Не удалось выполнить запрос!";
+	exit();
+}
+
+?>
+
 <form class="form-add form_hidden" action="../company/company_add.php" method="post">
 <header class="form_header"><h2>Добавление</h2></header>
 <input type="text" class="form__company-var" name="company" value="suppliers">
@@ -9,7 +22,7 @@
 			</tr>
 			<tr>
 				<td><label for="ogrn">ОГРН</label></td>
-				<td><input type="text" required id="ogrn" name="OGRN" value=""></td>
+				<td><input type="number" required id="ogrn" name="OGRN" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="addl">Юридический адрес</label></td>
@@ -21,27 +34,35 @@
 			</tr>
 			<tr>
 				<td><label for="inn">ИНН</label></td>
-				<td><input type="text" required id="inn" name="INN" value=""></td>
+				<td><input type="number" required id="inn" name="INN" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="kpp">КПП</label></td>
-				<td><input type="text" required id="kpp" name="KPP" value=""></td>
+				<td><input type="number" required id="kpp" name="KPP" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="rs">Расчетный счет</label></td>
-				<td><input type="text" required id="rs" name="RS" value=""></td>
+				<td><input type="number" required id="rs" name="RS" value=""></td>
 			</tr>
 			<tr>
-				<td><label for="bik">БИК банка</label></td>
-				<td><input type="text" required id="bik" name="BIK" value=""></td>
+				<td><label for="binn">Название банка</label></td>
+				<td>
+					<select size="1" required id="binn" name="BINN" value="">
+						<?php
+							while ($row = mysql_fetch_array($result_banks)) {  // вывод результата запроса
+						?>
+						<option value="<?php echo $row['BINN']; ?>"><?php echo $row['banks_name']; ?></option>
+						<?php } ?>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="tf">Телефон</label></td>
-				<td><input type="text" required id="tf" name="TF" value=""></td>
+				<td><input type="text" placeholder="(###)-###-##-##" required id="tf" name="TF" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="fx">Факс</label></td>
-				<td><input type="text" required id="fx" name="FX" value=""></td>
+				<td><input type="text" placeholder="(###)-###-##-##" required id="fx" name="FX" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="fio">Руководитель организации</label></td>
