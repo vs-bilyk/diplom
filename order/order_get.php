@@ -6,7 +6,16 @@
 
 include "../connect.php";
 
-$sql_order = "SELECT order.NZN, order.DDATE, order.NAME , order.PRICE, order.KINN, suppliers.NAME AS supp_name, clients.NAME AS cl_name FROM leasing.order, leasing.suppliers, leasing.clients WHERE order.PINN=suppliers.INN AND order.KINN=clients.INN";
+$sql_order = "SELECT 
+order.NZN, 
+order.DDATE, 
+order.NAME , 
+order.PRICE, 
+order.KINN, 
+suppliers.NAME AS supp_name, 
+clients.NAME AS cl_name 
+FROM leasing.order, leasing.suppliers, leasing.clients 
+WHERE order.PINN=suppliers.INN AND order.KINN=clients.INN";
 
 if(!$result_order = mysql_query($sql_order, $link)) { // выполнение запроса
 	echo "Не удалось выполнить запрос!";
