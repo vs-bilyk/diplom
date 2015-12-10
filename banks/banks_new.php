@@ -7,10 +7,6 @@
 				<td><input type="text" required id="name" name="NAME" value=""></td>
 			</tr>
 			<tr>
-				<td><label for="bik">БИК банка</label></td>
-				<td><input type="text" required id="bik" name="BIK" value=""></td>
-			</tr>
-			<tr>
 				<td><label for="ogrn">ОГРН</label></td>
 				<td><input type="text" required id="ogrn" name="OGRN" value=""></td>
 			</tr>
@@ -29,6 +25,10 @@
 			<tr>
 				<td><label for="kpp">КПП</label></td>
 				<td><input type="text" required id="kpp" name="KPP" value=""></td>
+			</tr>
+			<tr>
+				<td><label for="bik">БИК банка</label></td>
+				<td><input type="text" required id="bik" name="BIK" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="rs">Расчетный счет</label></td>

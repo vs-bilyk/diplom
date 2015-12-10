@@ -5,118 +5,70 @@ require_once 'connect.php';
 $sql_db = "CREATE DATABASE leasing"; // запрос для создание базы данных
 $result_db = mysql_query($sql_db, $link);  // создание базы данных
 
-// $name_table_array = array('clients', 'suppliers', 'leasing_company'); // массив с названием таблиц
-// $length_array = count($name_table_array);
-
-// for ($i = 0; $i < $length_array; $i++) { // цикл для создания трех одинаковых по содержанию таблиц
-
-// 	$sql_company = "CREATE TABLE `leasing`.`".$name_table_array[$i]."` ( 
-// 		`NAME` VARCHAR(40) NOT NULL,
-// 		`OGRN` VARCHAR(13) NOT NULL,
-// 		`ADDL` VARCHAR(40) NOT NULL,
-// 		`ADDM` VARCHAR(40) NOT NULL,
-// 		`INN` VARCHAR(10) NOT NULL,
-// 		`KPP` VARCHAR(9) NOT NULL,
-// 		`RS` VARCHAR(20) NOT NULL,
-// 		`BIK` VARCHAR(9) NOT NULL,
-// 		`TF` VARCHAR(10) NOT NULL,
-// 		`FX` VARCHAR(10) NOT NULL,
-// 		`FIO` VARCHAR(35) NOT NULL,
-// 		PRIMARY KEY(`INN`, `NAME`))";
-	
-// 	$result_company = mysql_query($sql_company, $link);
-
-// }
-$sql_clients = "CREATE TABLE `leasing`.`clients` ( 
-	`NAME` VARCHAR(40) NOT NULL,
-	`OGRN` VARCHAR(13) NOT NULL,
-	`ADDL` VARCHAR(40) NOT NULL,
-	`ADDM` VARCHAR(40) NOT NULL,
-	`INN` VARCHAR(10) NOT NULL,
-	`KPP` VARCHAR(9) NOT NULL,
-	`RS` VARCHAR(20) NOT NULL,
-	`BIK` VARCHAR(9) NOT NULL,
-	`TF` VARCHAR(10) NOT NULL,
-	`FX` VARCHAR(10) NOT NULL,
-	`FIO` VARCHAR(35) NOT NULL,
-	PRIMARY KEY(`INN`, `NAME`))";
-
-$sql_suppliers = "CREATE TABLE `leasing`.`suppliers` ( 
-	`NAME` VARCHAR(40) NOT NULL,
-	`OGRN` VARCHAR(13) NOT NULL,
-	`ADDL` VARCHAR(40) NOT NULL,
-	`ADDM` VARCHAR(40) NOT NULL,
-	`INN` VARCHAR(10) NOT NULL,
-	`KPP` VARCHAR(9) NOT NULL,
-	`RS` VARCHAR(20) NOT NULL,
-	`BIK` VARCHAR(9) NOT NULL,
-	`TF` VARCHAR(10) NOT NULL,
-	`FX` VARCHAR(10) NOT NULL,
-	`FIO` VARCHAR(35) NOT NULL,
-	PRIMARY KEY(`INN`, `NAME`))
-	-- FOREIGN KEY (`INN`) REFERENCES `order`(`PINN`)
-	-- ON UPDATE CASCADE
-	-- ON DELETE RESTRICT)";
-
-$sql_leasing_company = "CREATE TABLE `leasing`.`leasing_company` ( 
-	`NAME` VARCHAR(40) NOT NULL,
-	`OGRN` VARCHAR(13) NOT NULL,
-	`ADDL` VARCHAR(40) NOT NULL,
-	`ADDM` VARCHAR(40) NOT NULL,
-	`INN` VARCHAR(10) NOT NULL,
-	`KPP` VARCHAR(9) NOT NULL,
-	`RS` VARCHAR(20) NOT NULL,
-	`BIK` VARCHAR(9) NOT NULL,
-	`TF` VARCHAR(10) NOT NULL,
-	`FX` VARCHAR(10) NOT NULL,
-	`FIO` VARCHAR(35) NOT NULL,
-	PRIMARY KEY(`INN`, `NAME`))";
-
 $sql_banks = "CREATE TABLE `leasing`.`banks` (
 	`NAME` VARCHAR(40) NOT NULL,
-	`BIK` VARCHAR(9) NOT NULL,
-	`OGRN` VARCHAR(13) NOT NULL,
+	`OGRN` BIGINT(13) ZEROFILL NOT NULL,
 	`ADDL` VARCHAR(40) NOT NULL,
 	`ADDM` VARCHAR(40) NOT NULL,
-	`INN` VARCHAR(10) NOT NULL,
-	`KPP` VARCHAR(9) NOT NULL,
+	`INN` BIGINT(10) ZEROFILL NOT NULL,
+	`KPP` INT(9) ZEROFILL NOT NULL,
+	`BIK` INT(9) ZEROFILL NOT NULL,
 	`RS` VARCHAR(20) NOT NULL,
 	`KS` VARCHAR(20) NOT NULL,
 	`SS` VARCHAR(20) NOT NULL,
-	`TF` VARCHAR(10) NOT NULL,
-	`FX` VARCHAR(10) NOT NULL,
-	`FIO` VARCHAR(35) NOT NULL,
-	PRIMARY KEY(`INN`, `NAME`))";
+	`TF` VARCHAR(15),
+	`FX` VARCHAR(15),
+	`FIO` VARCHAR(35),
+	PRIMARY KEY(`INN`))";
+
+$result_banks = mysql_query($sql_banks, $link);
+
+$name_table_array = array('clients', 'suppliers', 'leasing_company'); // массив с названием таблиц
+$length_array = count($name_table_array);
+
+for ($i = 0; $i < $length_array; $i++) { // цикл для создания трех одинаковых по содержанию таблиц
+
+	$sql_company = "CREATE TABLE `leasing`.`".$name_table_array[$i]."` ( 
+		`NAME` VARCHAR(40) NOT NULL,
+		`OGRN` BIGINT(13) ZEROFILL NOT NULL,
+		`ADDL` VARCHAR(40) NOT NULL,
+		`ADDM` VARCHAR(40) NOT NULL,
+		`INN` BIGINT(10) ZEROFILL NOT NULL,
+		`KPP` INT(9) ZEROFILL NOT NULL,
+		`RS` VARCHAR(20) NOT NULL,
+		`BINN` BIGINT(10) ZEROFILL NOT NULL,
+		`TF` VARCHAR(15) NOT NULL,
+		`FX` VARCHAR(15) NOT NULL,
+		`FIO` VARCHAR(35) NOT NULL,
+		PRIMARY KEY(`INN`),
+		FOREIGN KEY (`BINN`) REFERENCES `banks`(`INN`)
+		ON UPDATE CASCADE
+		ON DELETE RESTRICT)";
+	
+	$result_company = mysql_query($sql_company, $link);
+}
 
 $sql_order = "CREATE TABLE `leasing`.`order` (
 	`NZN` INT(9) ZEROFILL AUTO_INCREMENT NOT NULL,
 	`DDATE` DATE NOT NULL,
-	`PINN` VARCHAR(10) NOT NULL,
+	`PINN` BIGINT(10) ZEROFILL NOT NULL,
 	`NAME` VARCHAR(40) NOT NULL,	
 	`PRICE` DECIMAL(10, 2) NOT NULL,
-	`KINN` VARCHAR(10) NOT NULL,
-	PRIMARY KEY(`NZN`))"; 
-
-$sql_crediting = "CREATE TABLE `leasing`.`crediting` (
-	`ND` INT(9) ZEROFILL AUTO_INCREMENT  NOT NULL,	
-	`DDATE` DATE  NOT NULL,
-	`BINN` VARCHAR(10)  NOT NULL,
-	`SUMMA` DECIMAL(10, 2)  NOT NULL,
-	`PDATE` DATE NOT NULL,
-	`PS` INT NOT NULL,
-	`ZDATE` DATE NOT NULL,
-	`NLD` VARCHAR(9) NOT NULL,
-	`KINN` VARCHAR(10) NOT NULL,
-	PRIMARY KEY(`ND`))";
+	`KINN` BIGINT(10) ZEROFILL NOT NULL,
+	PRIMARY KEY(`NZN`),
+	FOREIGN KEY (`PINN`) REFERENCES `suppliers`(`INN`)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT,
+	FOREIGN KEY (`KINN`) REFERENCES `clients`(`INN`)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT)"; 
 
 $sql_lease_agreement = "CREATE TABLE `leasing`.`lease_agreement` (
 	`NLD` INT(9) ZEROFILL AUTO_INCREMENT NOT NULL,
 	`DDATE` DATE NOT NULL,
-	`KINN` VARCHAR(10) NOT NULL,
-	`NZN` VARCHAR(9) NOT NULL,
-	`PURPOSE` VARCHAR(40) NOT NULL,
+	`NZN` INT(9) ZEROFILL NOT NULL,
+	`CPOL` VARCHAR(40) NOT NULL,
 	`POSDATE` DATE NOT NULL,
-	`PINN` VARCHAR(10) NOT NULL,
 	`T` INT NOT NULL NOT NULL,
 	`PP` VARCHAR(7) NOT NULL,
 	`NDATE` DATE NOT NULL,
@@ -128,21 +80,35 @@ $sql_lease_agreement = "CREATE TABLE `leasing`.`lease_agreement` (
 	`PRV` VARCHAR(3),
 	`PSU` DECIMAL(10, 2),
 	`SNDS` INT,
-	`LV0` DECIMAL(10, 2),
+	`AV` DECIMAL(10, 2),
 	`K` VARCHAR(10),
 	`PVI` VARCHAR(3),
 	`OTDATA` INT,
 	`PNP` INT,
 	`SH` DECIMAL(10, 2),
-	PRIMARY KEY(`NLD`))"; 
+	PRIMARY KEY(`NLD`),
+	FOREIGN KEY (`NZN`) REFERENCES `order`(`NZN`)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT)"; 
+
+$sql_crediting = "CREATE TABLE `leasing`.`crediting` (
+	`ND` INT(9) ZEROFILL AUTO_INCREMENT  NOT NULL,	
+	`DDATE` DATE  NOT NULL,
+	`BINN` BIGINT(10) ZEROFILL NOT NULL,
+	`SUMMA` DECIMAL(10, 2)  NOT NULL,
+	`PDATE` DATE NOT NULL,
+	`PS` INT NOT NULL,
+	`ZDATE` DATE NOT NULL,
+	`NLD` INT(9) ZEROFILL NOT NULL,
+	PRIMARY KEY(`ND`),
+	FOREIGN KEY (`NLD`) REFERENCES `lease_agreement`(`NLD`)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT)";
 
 $sql_purchase_sale = "CREATE TABLE `leasing`.`purchase_sale` (
 	`NDKP` INT(9) ZEROFILL AUTO_INCREMENT NOT NULL,
 	`DDATE`	DATE NOT NULL,
-	`PINN` VARCHAR(10) NOT NULL,
-	`KINN` VARCHAR(10) NOT NULL,
-	`NZN` VARCHAR(9) NOT NULL,
-	`NLD` VARCHAR(9) NOT NULL,
+	`NLD` INT(9) ZEROFILL NOT NULL,
 	`POPL` DECIMAL(10, 2),
 	`PDATE` INT,
 	`OPL` DECIMAL(10, 2) NOT NULL,
@@ -152,15 +118,14 @@ $sql_purchase_sale = "CREATE TABLE `leasing`.`purchase_sale` (
 	`PNP` INT,
 	`PND` INT,
 	`PNO` INT,
-	PRIMARY KEY(`NDKP`))"; 
+	PRIMARY KEY(`NDKP`),
+	FOREIGN KEY (`NLD`) REFERENCES `lease_agreement`(`NLD`)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT)"; 
 
-$result_clients = mysql_query($sql_clients, $link);
-$result_suppliers = mysql_query($sql_suppliers, $link);
-$result_leasing_company = mysql_query($sql_leasing_company, $link);
-$result_banks = mysql_query($sql_banks, $link);
 $result_order = mysql_query($sql_order, $link);
-$result_crediting = mysql_query($sql_crediting, $link);
 $result_lease_agreement = mysql_query($sql_lease_agreement, $link);
+$result_crediting = mysql_query($sql_crediting, $link);
 $result_purchase_sale = mysql_query($sql_purchase_sale, $link);
 
 if(!$result_db) {
@@ -168,7 +133,7 @@ if(!$result_db) {
 	exit();
 }
 
-if(!$result_clients || !$result_suppliers || !$result_leasing_company || !$result_banks || !$result_order || !$result_crediting || !$result_lease_agreement || !$result_purchase_sale) {
+if(!$result_company || !$result_banks || !$result_order || !$result_crediting || !$result_lease_agreement || !$result_purchase_sale) {
 	echo 'Ошибка при создании таблиц!';
 }
 else echo '<script language="javascript">window.location.href="index.php?thnx=0";</script>';

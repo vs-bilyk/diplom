@@ -27,12 +27,12 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 		<thead class="table-show-db__thead">
 			<tr>
 				<th>Название банка</th>
-				<th>БИК банка</th>
 				<th>ОГРН</th>
 				<th>Юридический адрес</th>
 				<th>Почтовый адрес</th>
 				<th>ИНН</th>
 				<th>КПП</th>
+				<th>БИК банка</th>
 				<th>Расчетный счет</th>
 				<th>Корреспондентский счет</th>
 				<th>Ссудный счет</th>
@@ -47,12 +47,12 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 			?>
 			<tr  id='banks_<?php echo $row['INN']; ?>' onclick="transferDataPhp(this.id);">
 				<td><?php echo $row['NAME']; ?></td>
-				<td><?php echo $row['BIK']; ?></td>
 				<td><?php echo $row['OGRN']; ?></td>
 				<td><?php echo $row['ADDL']; ?></td>
 				<td><?php echo $row['ADDM']; ?></td>
 				<td><?php echo $row['INN']; ?></td>
 				<td><?php echo $row['KPP']; ?></td>
+				<td><?php echo $row['BIK']; ?></td>
 				<td><?php echo $row['RS']; ?></td>
 				<td><?php echo $row['KS']; ?></td>
 				<td><?php echo $row['SS']; ?></td>

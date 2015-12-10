@@ -4,11 +4,11 @@ include "../connect.php";
 
 $inn = $_POST['company_inn']; 
 $name = $_POST['NAME'];
-$bik = $_POST['BIK'];
 $ogrn = $_POST['OGRN'];
 $addl = $_POST['ADDL'];
 $addm = $_POST['ADDM'];
 $kpp = $_POST['KPP'];
+$bik = $_POST['BIK'];
 $rs = $_POST['RS'];
 $ks = $_POST['KS'];
 $ss = $_POST['SS'];
@@ -16,7 +16,7 @@ $tf = $_POST['TF'];
 $fx = $_POST['FX'];
 $fio = $_POST['FIO'];
 
-$sql = "UPDATE `leasing`.`banks` SET `NAME`='".$name."', `BIK`='".$bik."', `OGRN`='".$ogrn."', `ADDL`='".$addl."', `ADDM`='".$addm."', `KPP`='".$kpp."', `RS`='".$rs."', `KS`='".$ks."', `SS`='".$ss."', `TF`='".$tf."', `FX`='".$fx."', `FIO`='".$fio."' WHERE `INN`='".$inn."';";
+$sql = "UPDATE `leasing`.`banks` SET `NAME`='".$name."', `OGRN`='".$ogrn."', `ADDL`='".$addl."', `ADDM`='".$addm."', `KPP`='".$kpp."', `BIK`='".$bik."', `RS`='".$rs."', `KS`='".$ks."', `SS`='".$ss."', `TF`='".$tf."', `FX`='".$fx."', `FIO`='".$fio."' WHERE `INN`='".$inn."';";
 
 $result = mysql_query($sql, $link); //Отправляем запрос
 

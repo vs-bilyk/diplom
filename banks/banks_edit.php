@@ -24,10 +24,6 @@ $row = mysql_fetch_array($result);
 				<td><input type="text" required id="name" name="NAME" value="<?php echo $row['NAME']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="bik">БИК банка</label></td>
-				<td><input type="text" required id="bik" name="BIK" value="<?php echo $row['BIK']; ?>"></td>
-			</tr>
-			<tr>
 				<td><label for="ogrn">ОГРН</label></td>
 				<td><input type="text" required id="ogrn" name="OGRN" value="<?php echo $row['OGRN']; ?>"></td>
 			</tr>
@@ -46,6 +42,10 @@ $row = mysql_fetch_array($result);
 			<tr>
 				<td><label for="kpp">КПП</label></td>
 				<td><input type="text" required id="kpp" name="KPP" value="<?php echo $row['KPP']; ?>"></td>
+			</tr>
+			<tr>
+				<td><label for="bik">БИК банка</label></td>
+				<td><input type="text" required id="bik" name="BIK" value="<?php echo $row['BIK']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="rs">Расчетный счет</label></td>

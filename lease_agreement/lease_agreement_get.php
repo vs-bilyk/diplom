@@ -11,7 +11,7 @@ lease_agreement.NLD,
 lease_agreement.DDATE, 
 lease_agreement.KINN, 
 lease_agreement.NZN, 
-lease_agreement.PURPOSE, 
+lease_agreement.CPOL, 
 lease_agreement.POSDATE, 
 lease_agreement.PINN,
 lease_agreement.T,
@@ -25,7 +25,7 @@ lease_agreement.STV,
 lease_agreement.PRV,
 lease_agreement.PSU,
 lease_agreement.SNDS,
-lease_agreement.LV0,
+lease_agreement.AV,
 lease_agreement.K,
 lease_agreement.PVI,
 lease_agreement.OTDATA,
@@ -96,7 +96,7 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // Ð²Ñ
 				<td><?php echo $row['DDATE']; ?></td>
 				<td><?php echo $row['cl_name']; ?></td>
 				<td><?php echo $row['NZN']; ?></td>
-				<td><?php echo $row['PURPOSE']; ?></td>
+				<td><?php echo $row['CPOL']; ?></td>
 				<td><?php echo $row['POSDATE']; ?></td>
 				<td><?php echo $row['supp_name']; ?></td>
 				<td><?php echo $row['T']; ?></td>
@@ -110,7 +110,7 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // Ð²Ñ
 				<td><?php echo $row['PRV']; ?></td>
 				<td><?php echo $row['PSU']; ?></td>
 				<td><?php echo $row['SNDS']; ?></td>
-				<td><?php echo $row['LV0']; ?></td>
+				<td><?php echo $row['AV']; ?></td>
 				<td><?php echo $row['K']; ?></td>
 				<td><?php echo $row['PVI']; ?></td>
 				<td><?php echo $row['OTDATA']; ?></td>
