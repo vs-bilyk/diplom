@@ -1,9 +1,131 @@
-.table-add-row__company-var {
-	display:none;
+* {
+	font-family: Arial, sans-serif;
 }
-.form_hidden{
+body {
+	padding: 0;
+	margin: 0;
+}
+.navigation{
+	padding-top: 15px;
+	height: 27px;
+	background-color: #0096A6;
+	text-align: center;
+}
+.navigation__item{
+	background-color: #5E5E5E;
+	border-top-left-radius: 5px;
+	padding: 10px 20px;
+	color:white;
+	text-decoration: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+.navigation__item[href="#"]{
+	background-color: #E8F5FF;
+	color: black;
+}
+form{
+	position: absolute;
+	width: 400px;
+	height: auto;
+	top:50px;
+	left: calc((100% - 440px) /2);
+	padding: 0 0 30px 40px;
+	background-color: white;
+	border: 1px solid rgba(200, 201, 201, 1);
+	border-radius: 2px;
+}
+table{
+	border-collapse: collapse;
+}
+.table-show-db{
+	width: 100%;
+}
+tr:nth-child(odd){
+	background-color: #E8F5FF;
+}
+.table-show-db tr{
+	border-bottom: 1px solid #DEDEDE;
+}
+.table-show-db td{
+	padding: 5px;
+	cursor: pointer;
+}
+th{
+	padding: 15px 5px;
+	border-bottom: 1px solid #BFBFBF;
+}
+input[disabled]{
+	background-color: white;
+}
+select{
+	width: 100%;
+}
+.form_header{
+	width: center;
+	text-align: center;
+}
+.form__table{
+	position: relative;
+}
+.form__corner-button{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top:0px;
+	right: 0px;
+	cursor: pointer;
+}
+.form__td-button label {
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+}
+.form__td-button, .table__td-button{
+	text-align: center;
+	background-color: #8CCCD4;
+	padding: 5px 0;
+	cursor: pointer;
+}
+.table__td-button_border{
+	border-right: 1px solid #DEDEDE;
+}
+.form_hidden, .form__company-var, .form__input-submit {
 	display:none;
 }
 .form_visibility {
 	display:block;
+}
+.print-doc{
+	width:210mm;
+	/*height: 270mm;*/
+	margin-right: auto;
+	margin-left: auto;
+}
+.header-doc{
+	text-align: center;
+}
+.date-doc{
+	text-align: right;
+}
+.paragraph-doc{
+	text-align:justify;
+}
+.nav-doc{
+	width: 200px;
+	text-align: center;
+	margin: 50px auto 10px auto;
+	border: 1px solid #BFBFBF;
+}
+.button_link-doc, .button_print-doc{
+	display: inline-block;
+	padding: 5px 20px;
+	cursor: pointer;
+}
+.button_link-doc{
+	text-decoration: none;
+	color: black;
+}
+.button_print-doc {
+	border-right: 1px solid #BFBFBF;
 }

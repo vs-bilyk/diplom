@@ -6,7 +6,7 @@
 
 include "../connect.php";
 
-$str_sql_query = "SELECT * FROM leasing.clients";  //строка запроса для вывода данных
+$str_sql_query = "SELECT * FROM leasing.banks";  //строка запроса для вывода данных
 
 if(!$result = mysql_query($str_sql_query, $link)) { // выполнение запроса
 	echo "Не удалось выполнить запрос!";
@@ -16,9 +16,9 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 
 <nav class="navigation">
 	<a class="navigation__item" href="../index.php">Меню</a>
-	<a class="navigation__item" href="#">Клиенты</a>
+	<a class="navigation__item" href="../clients/clients_get.php">Клиенты</a>
 	<a class="navigation__item" href="../suppliers/suppliers_get.php">Поставщики</a>
-	<a class="navigation__item" href="../banks/banks_get.php">Банки</a>
+	<a class="navigation__item" href="#">Банки</a>
 	<a class="navigation__item" href="../index.php">Договора</a>
 </nav>
 
@@ -26,14 +26,16 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 	<table class="table-show-db">
 		<thead class="table-show-db__thead">
 			<tr>
-				<th>Название организации</th>
+				<th>Название банка</th>
+				<th>БИК банка</th>
 				<th>ОГРН</th>
 				<th>Юридический адрес</th>
 				<th>Почтовый адрес</th>
 				<th>ИНН</th>
 				<th>КПП</th>
 				<th>Расчетный счет</th>
-				<th>БИК банка</th>
+				<th>Корреспондентский счет</th>
+				<th>Ссудный счет</th>
 				<th>Телефон</th>
 				<th>Факс</th>
 				<th>ФИО руководителя</th>
@@ -43,30 +45,31 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 			<?php
 				while ($row = mysql_fetch_array($result)) {  // вывод результата запроса
 			?>
-			<tr  id='clients_<?php echo $row['INN']; ?>' onclick="transferDataPhp(this.id);">
+			<tr  id='banks_<?php echo $row['INN']; ?>' onclick="transferDataPhp(this.id);">
 				<td><?php echo $row['NAME']; ?></td>
+				<td><?php echo $row['BIK']; ?></td>
 				<td><?php echo $row['OGRN']; ?></td>
 				<td><?php echo $row['ADDL']; ?></td>
 				<td><?php echo $row['ADDM']; ?></td>
 				<td><?php echo $row['INN']; ?></td>
 				<td><?php echo $row['KPP']; ?></td>
 				<td><?php echo $row['RS']; ?></td>
-				<td><?php echo $row['BIK']; ?></td>
+				<td><?php echo $row['KS']; ?></td>
+				<td><?php echo $row['SS']; ?></td>
 				<td><?php echo $row['TF']; ?></td>
 				<td><?php echo $row['FX']; ?></td>
 				<td><?php echo $row['FIO']; ?></td>
 			</tr>
 			<?php }  ?>
 			<tr>
-				<td class="table__td-button" colspan="11" onclick="formAddClassVisibility();">Добавить</td>
+				<td class="table__td-button" colspan="13" onclick="formAddClassVisibility();">Добавить</td>
 			</tr>
 		</tbody>		
 	</table>
 
 	<div class="span-add-form-edit"></div>
 </section>
-
 <?php  
-include "clients_new.php";
+include "banks_new.php";
 ?>
 

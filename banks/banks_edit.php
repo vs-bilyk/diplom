@@ -6,7 +6,7 @@ include "../connect.php";
 $inn = $_POST['key'];
 
 $sql="
-SELECT * FROM leasing.clients WHERE INN='".$inn."'; 
+SELECT * FROM leasing.banks WHERE INN='".$inn."'; 
 ";
 
 $result = mysql_query($sql, $link); //Отправляем запрос
@@ -14,15 +14,18 @@ $row = mysql_fetch_array($result);
 
 ?>
 
-<form class="form-edit" action="../company/company_save.php" method="post">
+<form class="form-edit" action="banks_save.php" method="post">
 <header class="form_header"><h2>Изменить запись</h2></header>
-<input type="text" class="form__company-var" name="company" value="clients">
 <input type="text" class="form__company-var" name="company_inn" value="<?php echo $inn; ?>">
 	<table class="form__table">
 		<tbody class="form__tbody">
 			<tr>
 				<td><label for="name">Название организации</label></td>
 				<td><input type="text" required id="name" name="NAME" value="<?php echo $row['NAME']; ?>"></td>
+			</tr>
+			<tr>
+				<td><label for="bik">БИК банка</label></td>
+				<td><input type="text" required id="bik" name="BIK" value="<?php echo $row['BIK']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="ogrn">ОГРН</label></td>
@@ -49,8 +52,12 @@ $row = mysql_fetch_array($result);
 				<td><input type="text" required id="rs" name="RS" value="<?php echo $row['RS']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="bik">БИК банка</label></td>
-				<td><input type="text" required id="bik" name="BIK" value="<?php echo $row['BIK']; ?>"></td>
+				<td><label for="rs">Корреспондентский счет</label></td>
+				<td><input type="text" required id="ks" name="KS" value="<?php echo $row['KS']; ?>"></td>
+			</tr>
+			<tr>
+				<td><label for="rs">Ссудный счет</label></td>
+				<td><input type="text" required id="ss" name="SS" value="<?php echo $row['SS']; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="tf">Телефон</label></td>

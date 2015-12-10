@@ -1,11 +1,14 @@
-<form class="form-add form_hidden" action="../company/company_add.php" method="post">
+<form class="form-add form_hidden" action="banks_add.php" method="post">
 <header class="form_header"><h2>Добавление</h2></header>
-<input type="text" class="form__company-var" name="company" value="clients">
 	<table class="form__table">
 		<tbody class="form__tbody">
 			<tr>
-				<td><label for="name">Название организации</label></td>
+				<td><label for="name">Название банка</label></td>
 				<td><input type="text" required id="name" name="NAME" value=""></td>
+			</tr>
+			<tr>
+				<td><label for="bik">БИК банка</label></td>
+				<td><input type="text" required id="bik" name="BIK" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="ogrn">ОГРН</label></td>
@@ -32,8 +35,12 @@
 				<td><input type="text" required id="rs" name="RS" value=""></td>
 			</tr>
 			<tr>
-				<td><label for="bik">БИК банка</label></td>
-				<td><input type="text" required id="bik" name="BIK" value=""></td>
+				<td><label for="ks">Корреспондентский счет</label></td>
+				<td><input type="text" required id="ks" name="KS" value=""></td>
+			</tr>
+			<tr>
+				<td><label for="ss">Ссудный счет</label></td>
+				<td><input type="text" required id="ss" name="SS" value=""></td>
 			</tr>
 			<tr>
 				<td><label for="tf">Телефон</label></td>

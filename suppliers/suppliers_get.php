@@ -6,7 +6,7 @@
 
 include "../connect.php";
 
-$str_sql_query = "SELECT * FROM leasing.clients";  //строка запроса для вывода данных
+$str_sql_query = "SELECT * FROM leasing.suppliers";  //строка запроса для вывода данных
 
 if(!$result = mysql_query($str_sql_query, $link)) { // выполнение запроса
 	echo "Не удалось выполнить запрос!";
@@ -16,8 +16,8 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 
 <nav class="navigation">
 	<a class="navigation__item" href="../index.php">Меню</a>
-	<a class="navigation__item" href="#">Клиенты</a>
-	<a class="navigation__item" href="../suppliers/suppliers_get.php">Поставщики</a>
+	<a class="navigation__item" href="../clients/clients_get.php">Клиенты</a>
+	<a class="navigation__item" href="#">Поставщики</a>
 	<a class="navigation__item" href="../banks/banks_get.php">Банки</a>
 	<a class="navigation__item" href="../index.php">Договора</a>
 </nav>
@@ -43,7 +43,7 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 			<?php
 				while ($row = mysql_fetch_array($result)) {  // вывод результата запроса
 			?>
-			<tr  id='clients_<?php echo $row['INN']; ?>' onclick="transferDataPhp(this.id);">
+			<tr  id='suppliers_<?php echo $row['INN']; ?>' onclick="transferDataPhp(this.id);">
 				<td><?php echo $row['NAME']; ?></td>
 				<td><?php echo $row['OGRN']; ?></td>
 				<td><?php echo $row['ADDL']; ?></td>
@@ -67,6 +67,6 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 </section>
 
 <?php  
-include "clients_new.php";
+include "suppliers_new.php";
 ?>
 
