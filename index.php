@@ -14,5 +14,6 @@
 	<a href="banks/banks_get.php">Банки</a>
 	<a href="order/order_get.php">Заказ-наряд</a>
 	<a href="lease_agreement/lease_agreement_get.php">Договор лизинга</a>
+	<a href="crediting/crediting_get.php">Кредитование</a>
 </body>
 </html>

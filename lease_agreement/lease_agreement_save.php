@@ -30,7 +30,7 @@ SET `DDATE`='".$ddate."', `NZN`='".$nzn."', `CPOL`='".$cpol."', `POSDATE`='".$po
 `PP`='".$pp."', `NDATE`='".$ndate."', `CP`='".$cp."', `KU`='".$ku."', `Q`='".$q."',
 `STK`='".$stk."', `STV`='".$stv."', `PRV`='".$prv."', `PSU`='".$psu."', `SNDS`='".$snds."',
 `AV`='".$av."', `K`='".$k."', `PVI`='".$pvi."', `OTDATA`='".$opdate."', `PNP`='".$pnp."', `SH`='".$sh."'
-WHERE `nld`='".$nld."';";
+WHERE `NLD`='".$nld."';";
 
 $result = mysql_query($sql, $link); //Отправляем запрос
 

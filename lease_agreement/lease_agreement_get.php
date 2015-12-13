@@ -50,6 +50,9 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 	<a class="navigation__item" href="../banks/banks_get.php">Банки</a>
 	<a class="navigation__item" href="../order/order_get.php">Заказ-наряд</a>
 	<a class="navigation__item" href="#">Договор лизинга</a>
+	<a class="navigation__item" href="../crediting/crediting_get.php">Кредитование</a>
+	<a class="navigation__item" href="../purchase_sale/purchase_sale_get.php">Купля-продажа</a>
+	<a class="navigation__item" href="../payments/payments_get.php">Контроль платежей</a>
 </nav>
 
 <section>

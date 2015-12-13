@@ -33,7 +33,11 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 	<a class="navigation__item" href="#">Клиенты</a>
 	<a class="navigation__item" href="../suppliers/suppliers_get.php">Поставщики</a>
 	<a class="navigation__item" href="../banks/banks_get.php">Банки</a>
-	<a class="navigation__item" href="../index.php">Договора</a>
+	<a class="navigation__item" href="../order/order_get.php">Заказ-наряд</a>
+	<a class="navigation__item" href="../lease_agreement/lease_agreement_get.php">Договор лизинга</a>
+	<a class="navigation__item" href="../crediting/crediting_get.php">Кредитование</a>
+	<a class="navigation__item" href="../purchase_sale/purchase_sale_get.php">Купля-продажа</a>
+	<a class="navigation__item" href="../payments/payments_get.php">Контроль платежей</a>
 </nav>
 
 <section>
