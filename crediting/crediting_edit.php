@@ -116,7 +116,7 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				</td>
 			</tr>
 			<tr>
-				<td id="lease_agreement_doc.php" class="table__td-button table__td-button_border" onclick="viewDoc(this.id);">Документ</td>
+				<td id="crediting_doc.php" class="table__td-button table__td-button_border" onclick="viewDoc(this.id);">Документ</td>
 				<td class="form__td-button"><label>Изменить<input type="submit"  class="form__input-submit"></label></td>
 			</tr>
 		</tbody>
