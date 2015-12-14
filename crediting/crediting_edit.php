@@ -64,15 +64,15 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 	<table class="form__table">
 		<tbody class="form__tbody">
 			<tr>
-				<td><label for="nd">Номер договора</label></td>
+				<td colspan="2"><label for="nd">Номер договора</label></td>
 				<td><input type="text" disabled id="nd" name="ND" value="<?php echo $row['ND']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="ddate">Дата договора</label></td>
+				<td colspan="2"><label for="ddate">Дата договора</label></td>
 				<td><input type="date" required id="ddate" name="DDATE" value="<?php echo $row['DDATE']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="binn">Банк</label></td>
+				<td colspan="2"><label for="binn">Банк</label></td>
 				<td>
 					<select size="1" required id="binn" name="BINN" value="">
 						<option selected value="<?php echo $row['BINN']; ?>"><?php echo $row['banks_name']; ?></option>
@@ -86,23 +86,23 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				</td>
 			</tr>
 			<tr>
-				<td><label for="summa">Сумма кредита, руб.</label></td>
+				<td colspan="2"><label for="summa">Сумма кредита, руб.</label></td>
 				<td><input type="number" required id="summa" name="SUMMA" value="<?php echo $row['SUMMA']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="pdate">Дата погашения</label></td>
+				<td colspan="2"><label for="pdate">Дата погашения</label></td>
 				<td><input type="date" required id="pdate" name="PDATE" value="<?php echo $row['PDATE']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="ps">Процентная ставка, %</label></td>
+				<td colspan="2"><label for="ps">Процентная ставка, %</label></td>
 				<td><input type="number" required id="ps" name="PS" value="<?php echo $row['PS']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="zdate">Дата заявки</label></td>
+				<td colspan="2"><label for="zdate">Дата заявки</label></td>
 				<td><input type="date" required id="zdate" name="ZDATE" value="<?php echo $row['ZDATE']; ?>"></td>
 			</tr>
 			<tr>
-				<td><label for="nld">Номер лизингового договора</label></td>
+				<td colspan="2"><label for="nld">Номер лизингового договора</label></td>
 				<td>
 					<select size="1" required id="nld" name="NLD" value="">
 						<option selected value="<?php echo $row['NLD']; ?>"><?php echo $row['NLD']." ".$row['cl_name']; ?></option>
@@ -116,7 +116,8 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				</td>
 			</tr>
 			<tr>
-				<td id="crediting_doc.php" class="table__td-button table__td-button_border" onclick="viewDoc(this.id);">Документ</td>
+				<td id="crediting_applic.php" class="table__td-button table__td-button_border" onclick="viewDoc(this.id);">Заявка</td>
+				<td id="crediting_doc.php" class="table__td-button table__td-button_border" onclick="viewDoc(this.id);">Договор</td>
 				<td class="form__td-button"><label>Изменить<input type="submit"  class="form__input-submit"></label></td>
 			</tr>
 		</tbody>

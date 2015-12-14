@@ -18,7 +18,7 @@ lease_agreement.NDATE,
 lease_agreement.CP,
 lease_agreement.KU,
 lease_agreement.Q,
-lease_agreement.STK,
+-- lease_agreement.STK,
 lease_agreement.STV,
 lease_agreement.PRV,
 lease_agreement.PSU,
@@ -72,7 +72,7 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				<th>Срок полезного использования, в годах</th>
 				<th>Коэффициент ускоренной амортизации</th>
 				<th>Коэффициент доли заемных средств</th>
-				<th>Ставка за кредитные ресурсы, %</th>
+				<!-- <th>Ставка за кредитные ресурсы, %</th> -->
 				<th>Ставка комиссионного вознаграждения (КВ), %</th>
 				<th>Расчет КВ</th>
 				<th>Стоимость прочих услуг лизингодателя, без НДС</th>
@@ -108,7 +108,7 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				<td><?php echo $row['CP']; ?></td>
 				<td><?php echo $row['KU']; ?></td>
 				<td><?php echo $row['Q']; ?></td>
-				<td><?php echo $row['STK']; ?></td>
+				<!-- <td><?php // echo $row['STK']; ?></td> -->
 				<td><?php echo $row['STV']; ?></td>
 				<td><?php if ($row['PRV'] == 1) echo "да"; else echo "нет";?></td>
 				<td><?php echo $row['PSU']; ?></td>

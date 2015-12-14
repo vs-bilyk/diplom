@@ -17,7 +17,7 @@ lease_agreement.NDATE,
 lease_agreement.CP,
 lease_agreement.KU,
 lease_agreement.Q,
-lease_agreement.STK,
+-- lease_agreement.STK,
 lease_agreement.STV,
 lease_agreement.PRV,
 lease_agreement.PSU,
@@ -123,10 +123,10 @@ if(!$result_order = mysql_query($sql_order, $link)) { // выполнение з
 				<td><label for="q">Коэффициент доли заемных средств</label></td>
 				<td><input type="text" id="q" name="Q" value="<?php echo $row['Q']; ?>"></td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td><label for="stk">Ставка за кредитные ресурсы, %</label></td>
-				<td><input type="number" id="stk" name="STK" value="<?php echo $row['STK']; ?>"></td>
-			</tr>
+				<td><input type="number" id="stk" name="STK" value="<?php /*echo $row['STK'];*/ ?>"></td>
+			</tr> -->
 			<tr>
 				<td><label for="stv">Ставка комиссионного вознаграждения (КВ), %</label></td>
 				<td><input type="number" id="stv" name="STV" value="<?php echo $row['STV']; ?>"></td>

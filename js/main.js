@@ -61,7 +61,7 @@ function viewDoc(addr) {
 	window.location.href = addr+'?message='+key;
 }
 
-function formatDate(year, month, day) {
+function formatDate(year, month, day, cl) {
 	switch(month) {
 		case 1: month = 'января';
 		break;
@@ -100,7 +100,18 @@ function formatDate(year, month, day) {
 		break;
 	}
 	var date = +day+' '+month+' '+year+'г.';
-	$('.date-doc').html(date);
+
+	if (cl == 'date-doc') {
+		$('.date-doc').html(date);
+		return;
+	}
+
+	$('.date').each( function () {
+		if (isNaN(parseInt($(this).text()))) {
+			$(this).html(date);
+			return;
+		}}
+	)
 }
 
 function printDoc() {

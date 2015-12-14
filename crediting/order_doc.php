@@ -24,10 +24,10 @@ include "order_get_data_doc.php";
 	<h1 class="header-doc">
 		ЗАКАЗ - НАРЯД  № <?php echo $key; ?><br>                                                                         
 		на поставку имущества
-	</h1><br>
+	</h1>
 	<div class="date-doc">
 		<script type="text/javascript"> // преобразовываем дату
-			formatDate( <?php echo $year ?>, <?php echo $month ?>, <?php echo $day ?>, 'date-doc');
+			formatDate( <?php echo $year ?>, <?php echo $month ?>, <?php echo $day ?>);
 		</script>
 	</div><br>
 	<p class="paragraph-doc">
@@ -56,33 +56,8 @@ include "order_get_data_doc.php";
 		15.	Отгрузочные реквизиты:     <br>
 		Наименование получателя - <?php echo $row_clients['NAME'];?>.<br>
 		Адрес получателя - <?php echo $row_clients['ADDM'];?>.<br><br><br>
-		ПОСТАВЩИК:<br><br>
-		Юридический адрес: <?php echo $row_suppliers['ADDL'];?><br>
-		Почтовый адрес: <?php echo $row_suppliers['ADDM'];?><br>
-		Телефон: <?php echo $row_suppliers['TF'];?><br>
-		Факс: <?php echo $row_suppliers['FX'];?><br>
-		ИНН: <?php echo $row_suppliers['INN'];?><br>
-		КПП: <?php echo $row_suppliers['KPP'];?><br>
-		Расчетный счет: <?php echo $row_suppliers['RS'];?><br>
-		Банк: <?php echo $row_leasing_supplier['NAME'];?><br>
-		Корреспондентский счет: <?php echo $row_leasing_supplier['KS'];?><br>
-		БИК: <?php echo $row_leasing_supplier['BIK'];?><br><br>
-
-		Подпись: ______________________________	<br><br><br>
-		
-		ЗАКАЗЧИК:<br><br>
-		Юридический адрес: <?php echo $row_leasing_company['ADDL'];?><br>
-		Почтовый адрес: <?php echo $row_leasing_company['ADDM'];?><br>
-		Телефон: <?php echo $row_leasing_company['TF'];?><br>
-		Факс: <?php echo $row_leasing_company['FX'];?><br>
-		ИНН: <?php echo $row_leasing_company['INN'];?><br>
-		КПП: <?php echo $row_leasing_company['KPP'];?><br>
-		Расчетный счет: <?php echo $row_leasing_company['RS'];?><br>
-		Банк: <?php echo $row_leasing_bank['NAME'];?><br>
-		Корреспондентский счет: <?php echo $row_leasing_bank['KS'];?><br>
-		БИК: <?php echo $row_leasing_bank['BIK'];?><br><br>
-
-		Подпись: ______________________________
+		ПОСТАВЩИК: <?php echo $row_suppliers['NAME'];?> /_________________/<br><br><br>	
+		ЗАКАЗЧИК: <?php echo $row_leasing_company['NAME'];?> /_________________/
 	</p>
 </section>
 

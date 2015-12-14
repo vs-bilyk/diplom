@@ -71,10 +71,10 @@ if(!$result_order = mysql_query($sql_order, $link)) { // выполнение з
 				<td><label for="q">Коэффициент доли заемных средств</label></td>
 				<td><input type="text" id="q" name="Q" value=""></td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td><label for="stk">Ставка за кредитные ресурсы, %</label></td>
 				<td><input type="number" id="stk" name="STK" value=""></td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td><label for="stv">Ставка комиссионного вознаграждения (КВ), %</label></td>
 				<td><input type="number" id="stv" name="STV" value=""></td>

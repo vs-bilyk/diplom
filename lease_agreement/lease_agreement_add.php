@@ -12,7 +12,7 @@ $ndate = $_POST['NDATE'];
 $cp = $_POST['CP'];       
 $ku = $_POST['KU'];
 $q = $_POST['Q'];
-$stk = $_POST['STK'];
+// $stk = $_POST['STK'];
 $stv = $_POST['STV'];   
 $prv = $_POST['PRV'];
 $psu = $_POST['PSU'];    
@@ -27,11 +27,11 @@ $sh = $_POST['SH'];
 $str_sql = 'INSERT INTO `leasing`.`lease_agreement` 
 	(`DDATE`, `NZN`, `CPOL`, `POSDATE`, `T`, 
 	`PP`, `NDATE`, `CP`, `KU`, `Q`, 
-	`STK`, `STV`, `PRV`, `PSU`, `SNDS`, 
+	/*`STK`,*/ `STV`, `PRV`, `PSU`, `SNDS`, 
 	`AV`, `K`, `PVI`, `OTDATA`, `PNP`, `SH`) 
 VALUES ("'.$ddate.'", "'.$nzn.'", "'.$cpol.'", "'.$posdate.'", "'.$t.'", 
 	"'.$pp.'", "'.$ndate.'", "'.$cp.'", "'.$ku.'", "'.$q.'", 
-	"'.$stk.'",  "'.$stv.'", "'.$prv.'", "'.$psu.'", "'.$snds.'", 
+	/*.$stk.*/ "'.$stv.'", "'.$prv.'", "'.$psu.'", "'.$snds.'", 
 	"'.$av.'","'.$k.'", "'.$pvi.'", "'.$opdate.'", "'.$pnp.'", "'.$sh.'");';
 
 $result = mysql_query($str_sql, $link);
