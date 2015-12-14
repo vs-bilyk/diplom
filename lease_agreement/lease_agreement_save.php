@@ -13,7 +13,7 @@ $ndate = $_POST['NDATE'];
 $cp = $_POST['CP'];       
 $ku = $_POST['KU'];   
 $q = $_POST['Q'];
-$stk = $_POST['STK'];
+// $stk = $_POST['STK'];  `STK`='".$stk."',
 $stv = $_POST['STV'];   
 $prv = $_POST['PRV'];   
 $psu = $_POST['PSU'];    
@@ -28,7 +28,7 @@ $sh = $_POST['SH'];
 $sql = "UPDATE `leasing`.`lease_agreement` 
 SET `DDATE`='".$ddate."', `NZN`='".$nzn."', `CPOL`='".$cpol."', `POSDATE`='".$posdate."', `T`='".$t."',
 `PP`='".$pp."', `NDATE`='".$ndate."', `CP`='".$cp."', `KU`='".$ku."', `Q`='".$q."',
-`STK`='".$stk."', `STV`='".$stv."', `PRV`='".$prv."', `PSU`='".$psu."', `SNDS`='".$snds."',
+ `STV`='".$stv."', `PRV`='".$prv."', `PSU`='".$psu."', `SNDS`='".$snds."',
 `AV`='".$av."', `K`='".$k."', `PVI`='".$pvi."', `OTDATA`='".$opdate."', `PNP`='".$pnp."', `SH`='".$sh."'
 WHERE `NLD`='".$nld."';";
 
