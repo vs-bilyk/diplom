@@ -5,6 +5,35 @@ body {
 	padding: 0;
 	margin: 0;
 }
+.menu-navigation{
+	width: 100%;
+	text-align: center;
+	background-color: #E8F5FF;
+	background: linear-gradient(to bottom, #E8F5FF, #ffffff);
+}
+.menu-navigation__left{
+	display: inline-block;
+}
+.menu-navigation__right{
+	display: inline-block;
+}
+.menu-navigation__item{
+	display: block;
+	width: 220px;
+	margin: 40px;
+	border: 1px solid #5E5E5E;
+	border-radius: 5px;
+	padding: 40px 0;
+	color:#5E5E5E;
+	text-decoration: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+.menu-navigation__item:hover{
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	color:#000000;
+}
 .navigation{
 	padding-top: 15px;
 	height: 27px;
