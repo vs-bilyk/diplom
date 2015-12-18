@@ -70,7 +70,7 @@ table{
 .table-show-db{
 	width: 100%;
 }
-tr:nth-child(odd){
+.table-show-db tr:nth-child(odd), .form__table tr:nth-child(odd){
 	background-color: #E8F5FF;
 }
 .table-show-db tr{
@@ -80,7 +80,7 @@ tr:nth-child(odd){
 	padding: 5px;
 	cursor: pointer;
 }
-th{
+.table-show-db th, .form__table th{
 	padding: 15px 5px;
 	border-bottom: 1px solid #BFBFBF;
 }
@@ -132,7 +132,6 @@ select{
 }
 .print-doc{
 	width:210mm;
-	/*height: 270mm;*/
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -162,4 +161,26 @@ select{
 }
 .button_print-doc {
 	border-right: 1px solid #BFBFBF;
+}
+.annex-doc {
+	font-size: inherit;
+	font-weight: inherit;
+	float: right;
+	text-align: left;
+}
+.header-annex-doc:after {
+	content: "";
+	display: block;
+	clear: both;	
+}
+.header-doc_small {
+	display: block;
+	font-size: 14pt;
+}
+.table-doc th{
+	border: 1px solid #000000;
+}
+.table-doc td {
+	border: 1px solid #000000;
+	text-align: right;
 }

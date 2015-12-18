@@ -102,5 +102,6 @@ $row_leasing_bank = mysql_fetch_array($result_leasing_bank);
 
 list ($year, $month, $day) = split ('[/.-]', $row_lease_agreement['DDATE']); // разбиваем дату для передечи в js функцию
 list ($year_posdate, $month_posdate, $day_posdate) = split ('[/.-]', $row_lease_agreement['POSDATE']);
+list ($year_ndate, $month_ndate, $day_ndate) = split ('[/.-]', $row_lease_agreement['NDATE']);
  ?>
 
