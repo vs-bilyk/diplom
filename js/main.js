@@ -110,10 +110,41 @@ function formatDate(year, month, day, cl) {
 		if (isNaN(parseInt($(this).text()))) {
 			$(this).html(date);
 			return;
-		}}
-	)
+		}
+	})
 }
 
+function formatPeriod(period) {
+	switch(period) {
+		case 1: period = 'год';
+		break;
+
+		case 4: period = 'квартал';
+		break;
+
+		case 12: period = 'месяц';
+		break;
+	}
+	$('.period').each( function () {
+		if ($(this).text() !== 'год' || $(this).text() !== 'квартал' || $(this).text() !== 'месяц') {
+			$(this).html(period);
+			return;
+		}
+	})
+}
+
+function formatRedemption(redemption) {
+	if (redemption) {
+		redemption = "производится";
+	}
+	else redemption = "не производится";
+	$('.redemption').each( function () {
+		if ($(this).text() !== 'производится' || $(this).text() !== 'не производится') {
+			$(this).html(redemption);
+			return;
+		}
+	})
+}
 function printDoc() {
 
 	$('.nav-doc').hide().show('2000') ;
