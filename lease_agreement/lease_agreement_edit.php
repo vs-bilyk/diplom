@@ -17,9 +17,7 @@ lease_agreement.NDATE,
 lease_agreement.CP,
 lease_agreement.KU,
 lease_agreement.Q,
--- lease_agreement.STK,
 lease_agreement.STV,
-lease_agreement.PRV,
 lease_agreement.PSU,
 lease_agreement.SNDS,
 lease_agreement.AV,
@@ -126,15 +124,6 @@ if(!$result_order = mysql_query($sql_order, $link)) { // выполнение з
 			<tr>
 				<td colspan="2"><label for="stv">Ставка комиссионного вознаграждения (КВ), %</label></td>
 				<td><input type="number" id="stv" name="STV" value="<?php echo $row['STV']; ?>"></td>
-			</tr>
-			<tr>
-				<td colspan="2"><label for="prv">Расчет КВ</label></td>
-				<td>
-					<select size="1" required id="prv" name="PRV" value="">
-						<option value="1" <?php if($row['PRV'] == 1) {?> selected <?php } ?>>да</option>
-						<option value="0" <?php if($row['PRV'] == 0) {?> selected <?php } ?>>нет</option>
-					</select>
-				</td>
 			</tr>
 			<tr>
 				<td colspan="2"><label for="psu">Стоимость прочих услуг лизингодателя, без НДС</label></td>

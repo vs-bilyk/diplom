@@ -156,7 +156,7 @@ function printDoc() {
 // модуль для расчета лизинговых платежей
 // и заполнения "графика платежей"
 // начало
-function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av) { 
+function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av, pvi) { 
 
 	var arrAO = []; // массив с амортизацией
 	var arrPK = []; // массив с платой за кредитные ресурсы
@@ -212,7 +212,7 @@ function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av) {
 			summAO = summAO + arrAO[i];
 			summ = summ + arr;
 		}
-	this.calculateLP(t, p, av);	
+		this.calculateLP(t, p, av);	
 	}
 
 	this.calculateLP = function(t, p, av) { // расчет лизинговых платежей
@@ -220,19 +220,20 @@ function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av) {
 		if (av) { // если есть аванс
 			lp = (summ - av) / (t*p);
 		}
-		else lp = summ/(t*p);// если нет аванса
+		else {
+			av = 0;
+			lp = summ/(t*p);// если нет аванса
+		}
 
 		lpAv = lp+av;
 		lpAv = lpAv.toFixed(2); // убираем лишние цифры после запятой для первого платежа+аванса
 
 		lp = lp.toFixed(2); // убираем лишние цифры после запятой для лизингово платежа
-		
-		console.log(lpAv);
 	}
 
-	this.calculateOS = function() {
-		os = bs - summAO;
-
+	this.calculateOS = function(pvi) {
+		if (pvi) os = bs - summAO;
+		else os = 0; 
 	}
 
 	for (var i = 0; i < t; i++) { // вызов методов для заданного количества лет
@@ -242,7 +243,7 @@ function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av) {
 		this.calculateNDS(snds);
 	}
 	this.calculateSummLP();
-	this.calculateOS();
+	this.calculateOS(pvi);
 
 	this.createTrTd = function () { // создаем строки и ячейки для таблицы
 		this.$td1 = $('<td>-</td>');
@@ -296,6 +297,7 @@ function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av) {
 			if (av) this.$td2.text(av);
 			this.$td3.text(summ - av);
 			if (os) this.$td4.text(os);
+			console.log(os);
 			this.$td5.text(os+summ);
 
 			this.$tr.append(this.$td1).append(this.$td2).append(this.$td3).append(this.$td4).append(this.$td5);

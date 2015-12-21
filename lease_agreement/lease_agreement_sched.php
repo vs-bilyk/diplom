@@ -59,7 +59,7 @@ include "lease_agreement_get_data_sched.php";
 				</tr>
 			</thead>			
 			<script>
-				CalculateLeasePayments(<?php echo $cp ?>,<?php echo $bs ?>,<?php echo $ku ?>,<?php echo $q ?>,<?php echo $st ?>,<?php echo $p ?>,<?php echo $pdu ?>,<?php echo $snds ?>,<?php echo $t ?>,<?php echo $p ?>,<?php echo $av ?>);
+				CalculateLeasePayments(<?php echo $cp ?>,<?php echo $bs ?>,<?php echo $ku ?>,<?php echo $q ?>,<?php echo $st ?>,<?php echo $p ?>,<?php echo $pdu ?>,<?php echo $snds ?>,<?php echo $t ?>,<?php echo $p ?>,<?php echo $av ?>,<?php echo $pvi ?>);
 			</script>
 		</table><br><br>
 		Лизингодатель:<?php echo $row_leasing_company['NAME']; ?><br>

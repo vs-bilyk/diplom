@@ -94,7 +94,7 @@ include "crediting_get_data_doc.php";
 
 <nav class="nav-doc">
 	<span class="button_print-doc" onclick="printDoc();">Печать</span>
-	<span><a class="button_link-doc" href="order_get.php">Назад</a></span>
+	<span><a class="button_link-doc" href="crediting_get.php">Назад</a></span>
 </nav>
 </body>
 </html>

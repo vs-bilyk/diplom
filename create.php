@@ -77,7 +77,7 @@ $sql_lease_agreement = "CREATE TABLE `leasing`.`lease_agreement` (
 	`Q` DECIMAL(9, 2),
 	-- `STK` INT,
 	`STV` INT,
-	`PRV` BOOLEAN NOT NULL, -- VARCHAR(3),
+	-- `PRV` BOOLEAN NOT NULL, -- VARCHAR(3),
 	`PSU` DECIMAL(10, 2),
 	`SNDS` INT,
 	`AV` DECIMAL(10, 2),

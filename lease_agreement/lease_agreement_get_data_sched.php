@@ -73,5 +73,6 @@ $snds = $row_lease_agreement['SNDS'];
 $t = $row_lease_agreement['T'];
 $p = $row_lease_agreement['PP'];
 $av = $row_lease_agreement['AV'];
- 
+$pvi = $row_lease_agreement['PVI']; 
+
 ?>
