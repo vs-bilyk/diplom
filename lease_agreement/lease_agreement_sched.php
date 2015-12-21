@@ -73,6 +73,7 @@ include "lease_agreement_get_data_sched.php";
 </section>
 
 <nav class="nav-doc">
+	<span class="button_payments-doc" onclick="fillingTablePayments(<?php echo $key ?>);">Добавить для контроля платежей</span>
 	<span class="button_print-doc" onclick="printDoc();">Печать</span>
 	<span><a class="button_link-doc" href="lease_agreement_get.php">Назад</a></span>
 </nav>

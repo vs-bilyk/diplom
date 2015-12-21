@@ -150,7 +150,7 @@ select{
 	margin: 50px auto 10px auto;
 	border: 1px solid #BFBFBF;
 }
-.button_link-doc, .button_print-doc{
+.button_link-doc, .button_print-doc, .button_payments-doc{
 	display: inline-block;
 	padding: 5px 20px;
 	cursor: pointer;
@@ -161,6 +161,9 @@ select{
 }
 .button_print-doc {
 	border-right: 1px solid #BFBFBF;
+}
+.button_payments-doc{
+	border-bottom: 1px solid #BFBFBF;
 }
 .annex-doc {
 	font-size: inherit;
@@ -183,4 +186,7 @@ select{
 .table-doc td {
 	border: 1px solid #000000;
 	text-align: right;
+}
+.form__input-no-paid{
+	color: #f77472;
 }

@@ -45,6 +45,9 @@ function transferDataPhp(key) {
 
 		case 'purchase': addr = 'purchase_sale_edit.php';
 		break;
+
+		case 'payments': addr = 'payments_edit.php';
+		break;
 	}
 	var text = '<?php  include "'+addr+'"; ?>'
 	$('.span-add-form-edit').html(text);
@@ -297,7 +300,6 @@ function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av, pvi) 
 			if (av) this.$td2.text(av);
 			this.$td3.text(summ - av);
 			if (os) this.$td4.text(os);
-			console.log(os);
 			this.$td5.text(os+summ);
 
 			this.$tr.append(this.$td1).append(this.$td2).append(this.$td3).append(this.$td4).append(this.$td5);
@@ -310,4 +312,17 @@ function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av, pvi) 
 	this.createString();
 }
 // конец модуля для расчета лизинговых платежей
+
+
+function fillingTablePayments(key) {
+
+var p1 = $('tbody tr:nth-child(2) td:last-child').text(); 
+var p2 = $('tbody tr:nth-child(3) td:last-child').text();
+var pn = $('tbody tr:nth-last-child(2) td:first-child').text();
+
+var message = key+'-'+p1+'-'+p2+'-'+pn;
+
+window.location.href = '../payments/payments_add_data.php?message='+message;
+
+}
 

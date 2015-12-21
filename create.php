@@ -123,17 +123,65 @@ $sql_purchase_sale = "CREATE TABLE `leasing`.`purchase_sale` (
 	ON UPDATE CASCADE
 	ON DELETE RESTRICT)"; 
 
+$sql_payments = "CREATE TABLE `leasing`.`payments` (
+	`NLD` INT(9) ZEROFILL NOT NULL,
+	`1p`	DECIMAL	(10, 2),
+	`2p`	DECIMAL	(10, 2),
+	`3p`	DECIMAL	(10, 2),
+	`4p`	DECIMAL	(10, 2),
+	`5p`	DECIMAL	(10, 2),
+	`6p`	DECIMAL	(10, 2),
+	`7p`	DECIMAL	(10, 2),
+	`8p`	DECIMAL	(10, 2),
+	`9p`	DECIMAL	(10, 2),
+	`10p`	DECIMAL	(10, 2),
+	`11p`	DECIMAL	(10, 2),
+	`12p`	DECIMAL	(10, 2),
+	`13p`	DECIMAL	(10, 2),
+	`14p`	DECIMAL	(10, 2),
+	`15p`	DECIMAL	(10, 2),
+	`16p`	DECIMAL	(10, 2),
+	`17p`	DECIMAL	(10, 2),
+	`18p`	DECIMAL	(10, 2),
+	`19p`	DECIMAL	(10, 2),
+	`20p`	DECIMAL	(10, 2),
+	`21p`	DECIMAL	(10, 2),
+	`22p`	DECIMAL	(10, 2),
+	`23p`	DECIMAL	(10, 2),
+	`24p`	DECIMAL	(10, 2),
+	`25p`	DECIMAL	(10, 2),
+	`26p`	DECIMAL	(10, 2),
+	`27p`	DECIMAL	(10, 2),
+	`28p`	DECIMAL	(10, 2),
+	`29p`	DECIMAL	(10, 2),
+	`30p`	DECIMAL	(10, 2),
+	`31p`	DECIMAL	(10, 2),
+	`32p`	DECIMAL	(10, 2),
+	`33p`	DECIMAL	(10, 2),
+	`34p`	DECIMAL	(10, 2),
+	`35p`	DECIMAL	(10, 2),
+	`36p`	DECIMAL	(10, 2),
+	`37p`	DECIMAL	(10, 2),
+	`38p`	DECIMAL	(10, 2),
+	`39p`	DECIMAL	(10, 2),
+	`40p`	DECIMAL	(10, 2),
+	PRIMARY KEY(`NLD`),
+	FOREIGN KEY (`NLD`) REFERENCES `lease_agreement`(`NLD`)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT)"; 
+
 $result_order = mysql_query($sql_order, $link);
 $result_lease_agreement = mysql_query($sql_lease_agreement, $link);
 $result_crediting = mysql_query($sql_crediting, $link);
 $result_purchase_sale = mysql_query($sql_purchase_sale, $link);
+$result_payments = mysql_query($sql_payments, $link)
 
 if(!$result_db) {
 	echo 'Ошибка при создании базы данных! <br>';
 	exit();
 }
 
-if(!$result_company || !$result_banks || !$result_order || !$result_crediting || !$result_lease_agreement || !$result_purchase_sale) {
+if(!$result_company || !$result_banks || !$result_order || !$result_crediting || !$result_lease_agreement || !$result_purchase_sale || !$result_payments) {
 	echo 'Ошибка при создании таблиц!';
 }
 else echo '<script language="javascript">window.location.href="index.php?thnx=0";</script>';
