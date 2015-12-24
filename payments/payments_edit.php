@@ -15,7 +15,7 @@ $row = mysql_fetch_array($result);
 
  ?>
 <form class="form-edit" action="payments_save.php"  method="post">
-<header class="form_header"><h2>Неоплаченные периоды</h2></header>
+<header class="form_header"><h2>Платежи</h2></header>
 <input type="text" class="form__company-var" name="number" value="<?php echo $nld; ?>">
 	<table class="form__table">
 		<tbody class="form__tbody">

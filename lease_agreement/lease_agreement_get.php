@@ -60,7 +60,6 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				<th>Номер договора</th>
 				<th>Дата договора</th>
 				<th>Лизинго- получатель</th>
-				<th>Номер заказ- наряда</th>
 				<th>Цель получения объекта</th>
 				<th>Дата поставки</th>
 				<th>Поставщик</th>
@@ -89,7 +88,6 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				<td><?php echo $row['NLD']; ?></td>
 				<td><?php echo $row['DDATE']; ?></td>
 				<td><?php echo $row['cl_name']; ?></td>
-				<td><?php echo $row['NZN']; ?></td>
 				<td><?php echo $row['CPOL']; ?></td>
 				<td><?php echo $row['POSDATE']; ?></td>
 				<td><?php echo $row['supp_name']; ?></td>
