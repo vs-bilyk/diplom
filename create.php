@@ -69,20 +69,18 @@ $sql_lease_agreement = "CREATE TABLE `leasing`.`lease_agreement` (
 	`NZN` INT(9) ZEROFILL NOT NULL,
 	`CPOL` VARCHAR(40) NOT NULL,
 	`POSDATE` DATE NOT NULL,
-	`T` INT NOT NULL NOT NULL, --изменила
-	`PP` INT NOT NULL, --изменила
+	`T` INT NOT NULL NOT NULL, --изм
+	`PP` INT NOT NULL, --изм
 	`NDATE` DATE NOT NULL,
 	`CP` INT NOT NULL,
 	`KU` DECIMAL(9, 1),
 	`Q` DECIMAL(9, 2),
-	-- `STK` INT,
 	`STV` INT,
-	-- `PRV` BOOLEAN NOT NULL, -- VARCHAR(3),
 	`PSU` DECIMAL(10, 2),
 	`SNDS` INT,
 	`AV` DECIMAL(10, 2),
 	`K` INT(3),
-	`PVI` BOOLEAN NOT NULL, -- VARCHAR(3),
+	`PVI` INT NOT NULL,
 	`OTDATA` INT,
 	`PNP` INT,
 	`SH` DECIMAL(10, 2),

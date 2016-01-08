@@ -25,5 +25,4 @@ if(!$result) {
 }
 else echo '<script language="javascript">window.location.href="banks_get.php?thnx=0";</script>'; // перенаправление на таблицу с данными
 
-
 ?>

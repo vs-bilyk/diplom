@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../css/main.css">
-<script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 
 <?php
 
@@ -38,8 +38,6 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 				<th>КПП</th>
 				<th>БИК банка</th>
 				<th>Расчетный счет</th>
-				<th>Корреспондентский счет</th>
-				<th>Ссудный счет</th>
 				<th>Телефон</th>
 				<th>Факс</th>
 				<th>ФИО руководителя</th>
@@ -58,8 +56,6 @@ if(!$result = mysql_query($str_sql_query, $link)) { // выполнение за
 				<td><?php echo $row['KPP']; ?></td>
 				<td><?php echo $row['BIK']; ?></td>
 				<td><?php echo $row['RS']; ?></td>
-				<td><?php echo $row['KS']; ?></td>
-				<td><?php echo $row['SS']; ?></td>
 				<td><?php echo $row['TF']; ?></td>
 				<td><?php echo $row['FX']; ?></td>
 				<td><?php echo $row['FIO']; ?></td>

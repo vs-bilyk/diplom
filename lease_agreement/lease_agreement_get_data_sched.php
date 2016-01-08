@@ -62,17 +62,17 @@ $row_clients = mysql_fetch_array($result_clients);
 list ($year, $month, $day) = split ('[/.-]', $row_lease_agreement['DDATE']); // разбиваем дату для передечи в js функцию
 list ($year_posdate, $month_posdate, $day_posdate) = split ('[/.-]', $row_lease_agreement['NDATE']);
 
-$cp = $row_lease_agreement['CP'];
-$bs = $row_order['PRICE'];
-$ku = $row_lease_agreement['KU'];
-$q = $row_lease_agreement['Q'];
-$st = $row_crediting['PS'];
-$p = $row_lease_agreement['STV'];
-$pdu = $row_lease_agreement['PSU'];
-$snds = $row_lease_agreement['SNDS'];
-$t = $row_lease_agreement['T'];
-$p = $row_lease_agreement['PP'];
-$av = $row_lease_agreement['AV'];
-$pvi = $row_lease_agreement['PVI']; 
+$cp = $row_lease_agreement['CP'] ? $row_lease_agreement['CP'] : 0;
+$bs = $row_order['PRICE'] ? $row_order['PRICE']: 0;
+$ku = $row_lease_agreement['KU'] ? $row_lease_agreement['KU'] : 0;
+$q = $row_lease_agreement['Q'] ? $row_lease_agreement['Q'] : 0;
+$st = $row_crediting['PS'] ? $row_crediting['PS'] : 0;
+$p = $row_lease_agreement['STV'] ? $row_lease_agreement['STV'] : 0;
+$pdu = $row_lease_agreement['PSU'] ? $row_lease_agreement['PSU'] : 0;
+$snds = $row_lease_agreement['SNDS'] ? $row_lease_agreement['SNDS'] : 0;
+$t = $row_lease_agreement['T'] ? $row_lease_agreement['T'] : 0;
+$p = $row_lease_agreement['PP'] ? $row_lease_agreement['PP'] : 0;
+$av = $row_lease_agreement['AV'] ? $row_lease_agreement['AV'] : 0;
+$pvi = $row_lease_agreement['PVI'] ? $row_lease_agreement['PVI'] : 0; 
 
 ?>

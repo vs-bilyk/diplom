@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Diplom</title>
@@ -8,7 +8,6 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<!-- <a href="create.php">Создать базу данных</a> -->
 <nav class="menu-navigation">
 	<div class="menu-navigation__left">
 		<a class="menu-navigation__item" href="clients/clients_get.php">Клиенты</a>

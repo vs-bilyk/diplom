@@ -14,8 +14,8 @@ include "order_get_data_doc.php";
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
-	<script type="text/javascript" src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 <body>
 	

@@ -19,10 +19,10 @@ function formAddContract(addr) {
 }
 
 function transferDataPhp(key) {
-	var arr = key.split('_');
-	var type = arr[0]; // где искать
-	var key = arr[1]; // первичный ключ строки
-	var addr;
+	var arr = key.split('_'),
+		type = arr[0], // где искать
+		key = arr[1], // первичный ключ строки
+		addr;
 
 	switch(type) {
 		case 'clients': addr = 'clients_edit.php';
@@ -65,44 +65,22 @@ function viewDoc(addr) {
 }
 
 function formatDate(year, month, day, cl) {
-	switch(month) {
-		case 1: month = 'января';
-		break;
-
-		case 2: month = 'февраля';
-		break;
-
-		case 3: month = 'марта';
-		break;
-
-		case 4: month = 'апреля';
-		break;
-
-		case 5: month = 'мая';
-		break;
-
-		case 6: month = 'июня';
-		break;
-
-		case 7: month = 'июля';
-		break;
-
-		case 8: month = 'августа';
-		break;
-
-		case 9: month = 'сентября';
-		break;
-
-		case 10: month = 'октября';
-		break;
-
-		case 11: month = 'ноября';
-		break;
-
-		case 12: month = 'декабря';
-		break;
-	}
-	var date = +day+' '+month+' '+year+'г.';
+	month = [
+     'января',
+     'февраля',
+     'марта',
+     'апреля',
+     'мая',
+     'июня',
+     'июля',
+     'августа',
+     'сентября',
+     'октября',
+     'ноября',
+     'декабря'
+    ][month - 1];
+	
+	var date = [day, month, year, 'г.'].join(' ');
 
 	if (cl == 'date-doc') {
 		$('.date-doc').html(date);
@@ -148,6 +126,7 @@ function formatRedemption(redemption) {
 		}
 	})
 }
+
 function printDoc() {
 
 	$('.nav-doc').hide().show('2000') ;
@@ -156,18 +135,30 @@ function printDoc() {
 	})
 }
 
+function fillingTablePayments(key) {
+
+var p1 = $('tbody tr:nth-child(2) td:last-child').text(), 
+	p2 = $('tbody tr:nth-child(3) td:last-child').text(),
+	pn = $('tbody tr:nth-last-child(2) td:first-child').text();
+
+var date = [key, p1, p2, pn].join('-');
+
+window.location.href = '../payments/payments_add_data.php?message='+message;
+}
+
 // модуль для расчета лизинговых платежей
 // и заполнения "графика платежей"
 // начало
 function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av, pvi) { 
 
-	var arrAO = []; // массив с амортизацией
-	var arrPK = []; // массив с платой за кредитные ресурсы
-	var arrKV = []; // массив комиссионного вознаграждения
-	var arrNDS = []; // массив с НДС
+	var arrAO = [], // массив с амортизацией
+		arrPK = [], // массив с платой за кредитные ресурсы
+		arrKV = [], // массив комиссионного вознаграждения
+		arrNDS = []; // массив с НДС
 
-	var summ = 0; // Общая сумма лизинговых платежей
-	var summAO = 0;
+	var summ = 0, // Общая сумма лизинговых платежей
+		summAO = 0;
+
 	var ao, pk, kv, nds, os;
 	
 	this.calculateAO = function(cp, bs, ku) { // расчет амотризации
@@ -312,17 +303,4 @@ function CalculateLeasePayments(cp, bs, ku, q, st, p, pdu, snds, t, p, av, pvi) 
 	this.createString();
 }
 // конец модуля для расчета лизинговых платежей
-
-
-function fillingTablePayments(key) {
-
-var p1 = $('tbody tr:nth-child(2) td:last-child').text(); 
-var p2 = $('tbody tr:nth-child(3) td:last-child').text();
-var pn = $('tbody tr:nth-last-child(2) td:first-child').text();
-
-var message = key+'-'+p1+'-'+p2+'-'+pn;
-
-window.location.href = '../payments/payments_add_data.php?message='+message;
-
-}
 

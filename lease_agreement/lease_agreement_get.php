@@ -9,24 +9,17 @@ include "../connect.php";
 $sql_lease_agreement = "SELECT 
 lease_agreement.NLD, 
 lease_agreement.DDATE,  
-lease_agreement.NZN, 
-lease_agreement.CPOL, 
+lease_agreement.NZN,  
 lease_agreement.POSDATE, 
 lease_agreement.T,
 lease_agreement.PP,
 lease_agreement.NDATE,
-lease_agreement.CP,
-lease_agreement.KU,
-lease_agreement.Q,
 lease_agreement.STV,
 lease_agreement.PSU,
 lease_agreement.SNDS,
 lease_agreement.AV,
 lease_agreement.K,
 lease_agreement.PVI,
-lease_agreement.OTDATA,
-lease_agreement.PNP,
-lease_agreement.SH,
 suppliers.NAME AS supp_name, 
 clients.NAME AS cl_name,
 order.NZN AS order_nzn,
@@ -60,24 +53,17 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				<th>Номер договора</th>
 				<th>Дата договора</th>
 				<th>Лизинго- получатель</th>
-				<th>Цель получения объекта</th>
 				<th>Дата поставки</th>
 				<th>Поставщик</th>
 				<th>Срок договора, в годах</th>
 				<th>Периодичность платежей</th>
 				<th>Начало 1-го расчетного периода</th>
-				<th>Срок полезного использования, в годах</th>
-				<th>Коэффициент ускоренной амортизации</th>
-				<th>Коэффициент доли заемных средств</th>
 				<th>Ставка комиссионного вознаграждения (КВ), %</th>
-				<th>Стоимость прочих услуг лизингодателя, без НДС</th>
+				<th>Стоимость прочих услуг, без НДС</th>
 				<th>Ставка НДС, %</th>
 				<th>Аванс, c НДС</th>
 				<th>Отсрочка начала платежей, в днях</th>
 				<th>Выкуп имущества</th>
-				<th>Дата извещения при отказе от приемки, в днях</th>
-				<th>Пеня за неуплату, %</th>
-				<th>Штрафная неустойка, руб.</th>
 			</tr>
 		</thead>
 		<tbody class="table-show-db__tbody">
@@ -88,7 +74,6 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 				<td><?php echo $row['NLD']; ?></td>
 				<td><?php echo $row['DDATE']; ?></td>
 				<td><?php echo $row['cl_name']; ?></td>
-				<td><?php echo $row['CPOL']; ?></td>
 				<td><?php echo $row['POSDATE']; ?></td>
 				<td><?php echo $row['supp_name']; ?></td>
 				<td><?php echo $row['T']; ?></td>
@@ -99,19 +84,12 @@ if(!$result_lease_agreement = mysql_query($sql_lease_agreement, $link)) { // в�
 					?>
 				</td>
 				<td><?php echo $row['NDATE']; ?></td>
-				<td><?php echo $row['CP']; ?></td>
-				<td><?php echo $row['KU']; ?></td>
-				<td><?php echo $row['Q']; ?></td>
-				<!-- <td><?php // echo $row['STK']; ?></td> -->
 				<td><?php echo $row['STV']; ?></td>
 				<td><?php echo $row['PSU']; ?></td>
 				<td><?php echo $row['SNDS']; ?></td>
 				<td><?php echo $row['AV']; ?></td>
 				<td><?php echo $row['K']; ?></td>
 				<td><?php if ($row['PVI'] == 1) echo "да"; else echo "нет";?></td>
-				<td><?php echo $row['OTDATA']; ?></td>
-				<td><?php echo $row['PNP']; ?></td>
-				<td><?php echo $row['SH']; ?></td>
 			</tr>
 			<?php }  ?>
 			<tr>
